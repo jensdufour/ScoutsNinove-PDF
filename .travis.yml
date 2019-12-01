@@ -10,6 +10,9 @@ branches:
 script:
   - JEKYLL_ENV=production bundle exec jekyll build --destination site
 deploy:
-  provider: pages:git
-  token: $GITHUB_TOKEN
-  edge: true # opt in to dpl v2
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master
