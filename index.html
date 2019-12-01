@@ -1,0 +1,3221 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="generator" content="Jekyll https://jekyllrb.com/">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+    <title>Programma – 'T Boekske</title>
+    <link rel="stylesheet" href="/assets/css/print.css">
+		<link rel="icon" type="image/png" href="/assets/icons/favicon.png">
+
+		<script>
+      window.PagedConfig = {
+        after: (flow) => {
+					console.log(flow);
+					/*if (flow.rendered) {
+						//window.print();
+						let elementHtml = flow.pagesArea;
+						let htmlBody = document.documentElement.outerHTML;
+						let optionsData = {
+							// Either "pdf" or "screenshot"
+							output: "pdf",
+							// HTML content to render. Either url or html is required
+							html: htmlBody.toString(),
+							// If we should emulate @media screen instead of print
+							emulateScreenMedia: false,
+							// If we should ignore HTTPS errors
+							ignoreHttpsErrors: true,
+							// If true, page is scrolled to the end before rendering
+							// Note: this makes rendering a bit slower
+							scrollPage: false,
+							// Passed to Puppeteer page.waitFor()
+							//waitFor: "networkidle2",
+							// Passed to Puppeteer page.pdf()
+							//pdf: {}
+						};
+						let optionsDataURI = encodeURIComponent(JSON.stringify(optionsData));
+						var xmlhttp = new XMLHttpRequest();
+						xmlhttp.open("POST", "https://cors-anywhere.herokuapp.com/https://numenpdf.herokuapp.com/api/render");
+						xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+						//xmlhttp.setRequestHeader('x-api-key', 'foobar');
+						xmlhttp.responseType = "blob";
+						xmlhttp.send(JSON.stringify(optionsData));
+						xmlhttp.onreadystatechange = function() {
+							if (xmlhttp.readyState === 4) {
+								console.log(xmlhttp.response);
+								if (typeof window.navigator.msSaveBlob === 'function') {
+									window.navigator.msSaveBlob(xmlhttp.response, "PdfName-" + new Date().getTime() + ".pdf");
+								} else {
+									var blob = xmlhttp.response;
+									var link = document.createElement('a');
+									link.href = window.URL.createObjectURL(blob);
+									link.download = "PdfName-" + new Date().getTime() + ".pdf";
+
+									// append the link to the document body
+
+									document.body.appendChild(link);
+
+									link.click();
+								}
+							}
+						}
+						console.log(optionsData);
+					}*/
+				}
+      }
+    </script>
+		<script src="../assets/js/paged.polyfil.js"></script>
+		<script>
+			function getUrlVars() {
+				var vars = {};
+				var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+					vars[key] = value;
+				});
+				return vars;
+			}
+			let width = getUrlVars()["width"];
+			let height = getUrlVars()["height"];
+			let orientation = getUrlVars()["orientation"];
+			let marginTop = getUrlVars()["marginTop"];
+			let marginBottom = getUrlVars()["marginBottom"];
+			let marginLeft = getUrlVars()["marginLeft"];
+			let marginRight = getUrlVars()["marginRight"];
+
+			if (width != undefined) {document.documentElement.style.setProperty('--width', width);}
+			if (height != undefined) {document.documentElement.style.setProperty('--height', height);}
+			if (orientation != undefined) {document.documentElement.style.setProperty('--orientation', orientation);}
+			if (marginTop != undefined) {document.documentElement.style.setProperty('--margin-top', marginTop);}
+			if (marginBottom != undefined) {document.documentElement.style.setProperty('--margin-bottom', marginBottom);}
+			if (marginLeft != undefined) {document.documentElement.style.setProperty('--margin-left', marginLeft);}
+			if (marginRight != undefined) {document.documentElement.style.setProperty('--margin-right', marginRight);}
+		</script>
+
+		<script src="../assets/js/orderedList.js" type="text/javascript"></script>
+	  <script>
+	    // waiting for the before everything hook for that one
+	    window.onload = function () {
+	      noteNumbering();
+
+	      /* render pagedjs after a first render in the browser (need to calculate the computed line-height and font-metrics */
+	      //setTimeout(pagedjs, 3000);
+	      setTimeout(addingNumToOl, 20000);
+
+	    }
+	    // after the layout, add the start property to each ol element
+	    addingNumToOl();
+
+	  </script>
+	</head>
+<body>
+	
+	
+
+
+
+
+
+
+<section class="cover" id="cover" data-type="cover">
+		
+			
+			
+			
+
+<div class="cover-header">
+	<div class="cover-book-title">'T Boekske</div>
+	<div class="cover-book-subtitle">6-Wekelijks programma van Scouts Ninove</div>
+</div>
+<div class="cover-image-container"><img class="cover-image" src="/assets/images/cover.jpg" alt="Cover" /></div>
+
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+</section>
+
+<!--front-matter-->
+<section class="front-matter">
+		
+			
+			
+			
+			
+		
+			
+			
+			
+		<section class="toc" id="toc" data-type="toc">
+
+<section class="toc">
+<h1>Inhoudstafel</h1>
+<nav>
+  <ul>
+    
+    
+    <li class="toc-1">
+      <a href="#woordjevandegroepsleiding">Woordje van de Groepsleiding</a>
+    </li>
+    
+    
+    
+    <li class="toc-1">
+      <a href="#kapoenen">Kapoenen</a>
+    </li>
+    
+    
+    
+    
+    
+    <li class="toc-1">
+      <a href="#welpen">Welpen</a>
+    </li>
+    
+    
+    
+    
+    
+    <li class="toc-1">
+      <a href="#jvk">Jongverkenners</a>
+    </li>
+    
+    
+    
+    
+    
+    <li class="toc-1">
+      <a href="#vk">Verkenners</a>
+    </li>
+    
+    
+    
+    
+    
+    <li class="toc-1">
+      <a href="#jin">Jinners</a>
+    </li>
+    
+    
+    
+    
+    
+    <li class="toc-1">
+      <a href="#vt">Voortrekkers</a>
+    </li>
+    
+    
+    
+    
+  </ul>
+</nav>
+</section>
+
+		</section>
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+</section>
+
+<!--body-matter-->
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+<section class="chapter" id="woordjevandegroepsleiding" data-type="chapter">
+	<h1 class="chapter chapter-title" id="woordjevandegroepsleiding">Woordje van de Groepsleiding</h1>
+
+<!-- <img src="../../assets/img/boeksken/groepsleiding.jpg" style="width:367.367px;height:auto;"> -->
+
+<p class="text-justify">Beste Scouts, ouders en sympathisanten, <br /><br /><br />De temperaturen beginnen gevoelig te zakken en de meeste mensen beginnen nu toch wel hun dikke frak en handschoenen uit de kast te halen. Een lange broek is voor die mensen ook een evidentie maar niet voor ons… Zoals elke scout wel weet, wordt een lange broek op zondag enkel gedragen wanneer de Dender is dichtgevroren, en dan nog! Scoutmoedig is niet voor niets het jaarthema!<br /><br />De herfstweekends zitten er intussen op en nu is het uitkijken naar een periode die door de een geassocieerd wordt met gezellige feesten en bij de ander onvermijdelijk een rilling door het lijf jaagt. De gevreesde examens komen er aan. Uiteraard zijn alle leiders voorbeeldige studenten en hebben ze zich al perfect voorbereid om deze periode zonder kleerscheuren door te komen. Desalniettemin zullen ze al dit werk ook moeten verzilveren en dit betekent dat ze soms niet aanwezig zullen zijn op de vergadering. Dit boekske en vooral volgend boekske zullen er dan ook genoeg vervangleiding voorzien worden om hun jarenlange ervaring nog eens toe te passen. Ik spring uiteraard bij waar ik kan. Ik wens alleszins iedereen die examens heeft deze tijd van het jaar heel veel moed en volharding toe. Komaan jongens, jullie kunnen het!<br /><br />Ik zou ook nog een warme oproep willen doen aan iedereen om onze jinnertjes te komen steunen tijdens hun winterbar op vrijdag 13 december. Ze zullen jullie deze zomer eeuwig dankbaar zijn tijdens hun trektocht. Aangepaste dranken en inkleding wordt voorzien. De ideale opwarmer voor de kerstmarkt van Pollare die zondag zou ik zeggen.<br /><br />Dan rest mij enkel nog iedereen heel gelukkige feesten te wensen! Geniet ervan!<br /><br />Stevige linker en tot in den draai,<br /><br />Klaas Vanderpoorten<br /><br />Groepsleider</p>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+<section class="chapter" id="kapoenen" data-type="chapter">
+	<h1 class="chapter chapter-title" id="kapoenen">Kapoenen</h1>
+
+<!-- <img src="../../assets/img/boeksken/kapoenen.jpg" style="width:367.367px;height:auto;"> -->
+
+<p class="text-justify">Beste ouders, kapoenen en sympathisanten, <br /><br />We hebben het 2de boekje van dit scoutsjaar afgesloten, hopelijk hebben jullie er evenveel van genoten als de leiding. Ook wil ik de kapoenen bedanken voor er op het einde nog een spetterend weekend van te maken! Ik denk dat het geslaagd was! <br /><br />Nu de winter voor de deur staat en de feestdagen eraan komen kunnen wij, als echte feestbeesten, niet anders dan deelnemen aan de feestelijkheden. Het eerste fantastisch feestspektakel vindt plaats op 1 december. Hier gaan we samen met andere Ninofse jeugd de Sint verwelkomen. Dit gaat gepaard met een spetterende sinten show en natuurlijk, heel veel snoep. <br /><br />Omdat we natuurlijk ook niet anders kunnen dan ook een kerstfeestje te houden samen met dekapoenen, laten we  dit doorgaan zaterdagavond, 28 december. De leiding voorziet een hapje, drankje en dansbare muziek. Jullie nemen allemaal een pakje mee ter waarde van ongeveer 5 Euro. <br /><br /> Zo, hierbij laat ik het, het enige wat mij nog te doen staat is jullie allemaal zeer prettige feesten, en een mooi 2020 toe te wensen. <br /><br /> Stevige linker, <br /><br />Ward, Ward en Ward</p>
+
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="section" id="kapoenen-PR" data-type="section">
+	<h1 class="section " id="kapoenen-PR">Programma</h1>
+
+<!-- <img src="../../assets/img/boeksken/kapoenen.jpg" style="width:367.367px;height:auto;"> -->
+
+<div class="card-body">
+    <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-lg-12">
+            <div class="card clean-card text-center">
+                
+                <div class="card-body info">
+                    <h4 class="card-title">Fotozoektocht - 
+                        24 / 11 / 2019
+                        
+                        (
+                        14u
+                        
+                        -
+                        
+                        17u
+                        
+                        )
+                    </h4>
+                    <p class="card-text text-justify">Vandaag gaan we een zoektocht in Ninove doen. Wij hebben foto’s genomen van de monumenten, gebouwen en plaatsen die wij in onze mooie stad hebben staan. Benieuwd of jij goed je weg kent in Ninove? Kom het dan vandaag zeker eens bewijzen!</p>
+                    <p class="card-text"></p>
+
+                </div>
+                <div>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        
+        <div class="col-sm-12 col-lg-12">
+            <div class="card clean-card text-center">
+                
+                <div class="card-body info">
+                    <h4 class="card-title">Sinterklaasvergadering - 
+                        01 / 12 / 2019
+                        
+                        (
+                        14u
+                        
+                        -
+                        
+                        17u
+                        
+                        )
+                    </h4>
+                    <p class="card-text text-justify">Joepie! Na onze ontmoeting met de Sint op weekend, komt onze goede vriend ons nog eens een bezoekje brengen! Vandaag zakken wij af naar het grote Sinterklaasfeest in De Kuip. Wij gaan natuurlijk eens een kijkje nemen en de Sint eens vragen of jullie dit jaar wel braaf zijn geweest buiten de Scouts. Want binnen de Scouts, dat weten wij natuurlijk al. 😉 Wie aan de Sint zijn mooiste tekening wilt tonen, mag die ook altijd meenemen!</p>
+                    <p class="card-text"></p>
+
+                </div>
+                <div>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        
+        <div class="col-sm-12 col-lg-12">
+            <div class="card clean-card text-center">
+                
+                <div class="card-body info">
+                    <h4 class="card-title">Racevergadering - 
+                        08 / 12 / 2019
+                        
+                        (
+                        14u
+                        
+                        -
+                        
+                        17u
+                        
+                        )
+                    </h4>
+                    <p class="card-text text-justify">Vandaag mogen jullie alles waar wieltjes onderstaan en kan rijden, meenemen. Je step, skateboard, rolschaatsen, waveboard of je fiets, noem maar op! De leiders zijn alvast benieuwd wie het snelst zal zijn. Spullen zoals helmen, kniebeschermers en een fluovestje kunnen heel handig van pas komen vandaag!</p>
+                    <p class="card-text"></p>
+
+                </div>
+                <div>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        
+        <div class="col-sm-12 col-lg-12">
+            <div class="card clean-card text-center">
+                
+                <div class="card-body info">
+                    <h4 class="card-title">Zwemmen - 
+                        15 / 12 / 2019
+                        
+                        (
+                        14u
+                        
+                        -
+                        
+                        17u
+                        
+                        )
+                    </h4>
+                    <p class="card-text text-justify">Het is al weer een tijdje geleden dat we eens gingen zwemmen. Vandaag brengen we nog eens een bezoekje aan het zwembad de Kleine Dender. Neem jullie coolste zwembroek dus nog maar eens uit de kast en als je thuis een duikbril hebt, mag je die ook zeker in je zwemzak stoppen!</p>
+                    <p class="card-text"></p>
+
+                </div>
+                <div>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        
+        <div class="col-sm-12 col-lg-12">
+            <div class="card clean-card text-center">
+                
+                <div class="card-body info">
+                    <h4 class="card-title">Jinvergadering - 
+                        22 / 12 / 2019
+                        
+                        (
+                        14u
+                        
+                        -
+                        
+                        17u
+                        
+                        )
+                    </h4>
+                    <p class="card-text text-justify">We hebben dit jaar nog eens veel Jinners er bij gekregen, en dat is altijd heel leuk! Vandaag zullen zij voor jullie een spel in elkaar steken. Wij zijn alvast heel benieuwd. Jullie toch ook? Komt dat zien!</p>
+                    <p class="card-text"></p>
+
+                </div>
+                <div>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        
+        <div class="col-sm-12 col-lg-12">
+            <div class="card clean-card text-center">
+                
+                <div class="card-body info">
+                    <h4 class="card-title">Kerstfeestje - 
+                        28 / 12 / 2019
+                        
+                        (
+                        18u00
+                        
+                        -
+                        
+                        20u00
+                        
+                        )
+                    </h4>
+                    <p class="card-text text-justify">Aangezien de leiding examens heeft, doen we vandaag een vergadering op zaterdag. We organiseren een laat Kerst- en vroeg Nieuwjaarsfeestje! Wij zorgen voor een hapje en een drankje, jullie zorgen voor de kompanie. Want hoe meer zielen, hoe meer vreugd! (Zaterdag; 18u-20u; lokaal)<br /><br />PS. nemen jullie ook een cadeautje ter waarde van 5 euro mee voor onder de kerstboom?</p>
+                    <p class="card-text"></p>
+
+                </div>
+                <div>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        
+    </div>
+</div>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="chapter" id="welpen" data-type="chapter">
+	<h1 class="chapter chapter-title" id="welpen">Welpen</h1>
+
+<!-- <img src="../../assets/img/boeksken/welpen.jpg" style="width:367.367px;height:auto;"> -->
+
+<p class="text-justify">Beste welpen, ouders en sympathisanten <br /><br />De afgelopen 6 weken zijn al weer voorbij gevlogen, met onder andere de dag van de Jeugdbeweging, sterkste welp en natuurlijk het verrassingsweekend in Denderhoutem. Wordt het moeilijk om deze mooie ervaringen te evenaren. Maar niet getreurd want komende 6 weken worden minstens even leuk en memorabel. Voor het nieuwe boekske zullen we ons namelijk goed mogen kleden want wij deinzen niet terug voor de koude. Zo gaan we dit boekske de bunkers nog eens gaan herontdekken en verwachten we een knotsgekke jinvergadering. Maar niet paniekeren, we blijven ook wel eens binnen deze maand. Zo gaan we de Sint verwelkomen in onze eigen Kuip dus hopelijk zijn jullie braaf geweest dit jaar en houden we ook nog een kleine kerst/nieuwjaarsreceptie. <br /><br />Amuseer jullie ook goed tijdens jullie 2 weken vakantie waarin de leiders lekker aan het blokken zijn, het kan dus zijn dat niet alle leiders aanwezig zijn. Bij deze wens ik  jullie ook alvast een vrolijk kerstfeest en een gelukkig Nieuwjaar!<br /><br />Stevige Linker,<br /><br />Riedl</p>
+
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="section" id="welpen-PR" data-type="section">
+	<h1 class="section " id="welpen-PR">Programma</h1>
+
+<!-- <img src="../../assets/img/boeksken/kapoenen.jpg" style="width:367.367px;height:auto;"> -->
+
+<div class="card-body">
+        <div class="row justify-content-center">
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Bunkertocht - 
+                            24 / 11 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Het wordt kouder - en de dagen korter. Tijd dus voor een klassieker onder de vergaderingen → BUNKERTOCHT. Smeer die benen, trek die bottinen maar stevig aan. Vandaag ontdekken we de omgeving rond de bunkers van Pamel. Komen is de boodschap!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">GEEN VERGADERING - 
+                            01 / 12 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Dit weekend is er spijtig genoeg geen vergadering :( De leiding gaat op weekend met het district.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Sinterklaasvergadering - 
+                            08 / 12 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Sinterklaas kapoentje, leg wat in mijn schoentje... Jullie kennen waarschijnlijk allemaal de bekendste sinterklaasliedjes, tijd om de Sint in Ninove te verwelkomen en dus uit volle borst te zingen. Kom dat zien en vooral, zorg dat er geen welpen op de lijst met stoute kinderen staat!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Jinvergadering - 
+                            15 / 12 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vandaag nemen onze jinners van dienst het even over van de leiding. Zij bedenken voor jullie een super toffe en originele vergadering. We kijken vandaag of de jinners wel welpenleider-waardig zijn!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Filmvergadering - 
+                            21 / 12 / 2019
+                            
+                            (
+                            19u00
+                            
+                            -
+                            
+                            21u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vanavond zakken we gezellig weg in de zetels van ons lokaal en zorgt de leiding voor een toffe film en versnaperingen. We spreken vanavond af van 19 uur tot 21uur</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Kerstfeestje - 
+                            28 / 12 / 2019
+                            
+                            (
+                            19u00
+                            
+                            -
+                            
+                            21u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Joepie! Bijna Nieuwjaar!!!!! Weer een reden om te feesten als de beesten! Maar omdat jullie Nieuwjaar thuis vieren en niet bij ons, geven wij toch nog een pre-party in het lokaal. Iedereen kan dan zijn nieuwjaarsbrief voor de leiding voorlezen. We spreken vanavond af van 19 uur tot 21uur. <br /><br />Breng ook je eigen geschreven nieuwjaarsbrief en een cadeautje mee (MAX 5EURO)</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="chapter" id="jvk" data-type="chapter">
+	<h1 class="chapter chapter-title" id="jvk">Jongverkenners</h1>
+
+<!-- <img src="../../assets/img/boeksken/jvk.jpg" style="width:367.367px;height:auto;"> -->
+
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="section" id="jvk-PR" data-type="section">
+	<h1 class="section " id="jvk-PR">Programma</h1>
+
+<!-- <img src="../../assets/img/boeksken/kapoenen.jpg" style="width:367.367px;height:auto;"> -->
+
+<div class="card-body">
+        <div class="row justify-content-center">
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Ontbijten rondbrengen - 
+                            23 / 11 / 2019
+                            
+                            (
+                            07u00
+                            
+                            -
+                            
+                            ...
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vandaag in het om 7h afspraak aan het lokaal om onze ontbijten rond te brengen. Dit is de grootste geldactiviteit van het jaar voor onze kas dus we rekenen massaal op jullie aanwezigheid. Het zou ook fantastisch zijn mochten er enkele ouders willen helpen met ontbijten rond te brengen.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Ontbijten rondbrengen - 
+                            24 / 11 / 2019
+                            
+                            (
+                            07u00
+                            
+                            -
+                            
+                            ...
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Idem gisteren, vandaag brengen we de ontbijten rond in Ninove. Terug afspraak om 7h.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">GEEN VERGADERING - 
+                            30 / 11 / 2019
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">De leiding is op districtsweekend. Eens zien wat we in de kuip hebben bij het district. Want 3,4 en 5 april gaan wij samen met alle jongverkenners van het district op weekend.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Bunkertocht - 
+                            01 / 12 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vandaag gaan we te zien krijgen we de echte beesten zijn en geen schrik hebben om een beetje vuil te worden. Kleed jullie warm aan (handschoenen zijn handig!)</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Sinterklaasvergadering - 
+                            07 / 12 / 2019
+                            
+                            (
+                            19u30
+                            
+                            -
+                            
+                            21u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">De zak van Sinterklaas,<br /><br />Sinterklaas, Sinterklaas.<br /><br />De zak van Sinterklaas,<br /><br />oh jongens, jongens, ‘t is zo’n baas!<br /><br />Daar stopt hij, daar stopt hij,<br /><br />daar stopt hij blij van zin.<br /><br />De hele, de hele, de hele wereld in…<br /><br /></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">GEEN VERGADERING - 
+                            08 / 12 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">De leiding heeft examens en moet dus hard studeren!!!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Filmvergadering - 
+                            14 / 12 / 2019
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vanavond gaan we samen een nice film zien.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">GEEN VERGADERING - 
+                            15 / 12 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">De leiding gaat op teambuilding op nog zottere vergaderingen in de toekomst in elkaar te steken. Geniet van je vrije zondag en anders veel succes met de examens.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">KSA-Vergadering - 
+                            21 / 12 / 2019
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vandaag komen we te weten hoe een wekelijkse vergadering van de ksa er uit ziet en komen we te weten dat we blij mogen zijn dat we in de skoeten van ninof zitten!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Jinvergadering - 
+                            22 / 12 / 2019
+                            
+                            (
+                            1
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vandaag hebben de veske jinners een zotte vergadering in elkaar gestoken, misschien wel de zotste van het jaar. Zeker komen!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">nieuwjaarsbrievenschrijven - 
+                            28 / 12 / 2019
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Pak zeker een originele brief mee voor de leiding zodat jullie al eens kunnen oefenen zodat jullie 1 januari niet falen voor de oma en opa….</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Nieuwjaarsreceptie - 
+                            29 / 12 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vandaag zorgt de leiding voor een hapje en een drankje en gaan we onze goede voornemens al eens zeggen (die er waarschijnlijk toch niet zullen van komen!!!)</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="chapter" id="vk" data-type="chapter">
+	<h1 class="chapter chapter-title" id="vk">Verkenners</h1>
+
+<!-- <img src="../../assets/img/boeksken/vk.jpg" style="width:367.367px;height:auto;"> -->
+
+<p class="text-justify">Beste verkenner, ouder(s), en sympathisanten <br /><br /><br />Het eerste boekje zit er alweer op, het waren zes fysieke en scouteske weken. Zo hebben jullie al een patrouilletocht gestapt, leren schieten op een kaart én is het geheugen opgefrist ivm met morse. We weten ook wie de sterkste verkenner is, en wie de beste coureur is van de groep. In de herfstvakantie zijn we richting Sint-truiden getrokken voor ons herfstkamp. Dit was samen met de jongverkennertak en is heel goed verlopen. Als activiteit hebben we een trampolinepark bezocht, wat eerlijk gezegd vrij intensief was. Dit komt ook misschien omdat we voor de formule 120min hebben gekozen… Het herfstdiner was dik in orde en daarvoor bedanken we de fourage. We hopen dat jullie net zoals ons een kamp hebben beleefd waar je later nog positief op terug kan kijken.    De komende weken zijn voor ieder van ons een uitdaging, maar samen slaan we ons wel door die examens. Heel veel succes en knalt ze boys… Hierdoor zullen onvermijdelijk een aantal vergaderingen geschrapt worden aangezien school héél héél héél erg belangrijk is😉<br /><br />Ten slotte wens ik iedereen prettige feesten en een gelukkig nieuwjaar. <br /><br />Stevige Linker<br /><br />Ruben, Jens, Max<br /><br /><br />AKA<br /><br />Prausjbiëjst, djens, en bakker JR</p>
+
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="section" id="vk-PR" data-type="section">
+	<h1 class="section " id="vk-PR">Programma</h1>
+
+<!-- <img src="../../assets/img/boeksken/kapoenen.jpg" style="width:367.367px;height:auto;"> -->
+
+<div class="card-body">
+        <div class="row justify-content-center">
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Casino Part 1 - 
+                            23 / 11 / 2019
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vandaag beginnen we aan een fameus casinoweekend. Jullie weten allemaal wat dit inhoud, jullie moeten namelijk casinokleren aandoen.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Casino Part 2 - 
+                            24 / 11 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vandaag kunnen jullie jullie verdiende miljoenen terugverdienen of juist nog armer worden. Doe net zoals gisteren jullie kostuum aan.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Pimp My Lokaal-vergadering - 
+                            30 / 11 / 2019
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Zoals jullie waarschijnlijk al gemerkt hebben kan ons lokaal een opfrisbeurt gebruiken. Dus vandaag gaan we daar verandering in brengen. Neem allemaal wat gerief mee om ons lokaal wat te pimpen (posters, discobal, wolvenkop,….).</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Geen vergadering - 
+                            01 / 12 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Morgen is het jullie eerste examen, SPANNEND. Dus studeer allemaal vandaag maar goed en natuurlijk ook veel succes gewenst.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Filmvergadering - 
+                            07 / 12 / 2019
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Na al jullie “harde” studeren is het vandaag eens tijd voor wat ontspanning. We gaan vanavond dus een filmpje checken, uren worden later meegedeeld.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Geen vergadering - 
+                            08 / 12 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">De laatste loodjes wegen het zwaarst. Komaan he boys nog goed studeren he.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Geen vergadering - 
+                            14 / 12 / 2019
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">De leiding heeft een kerstdiner vandaag. Dit wil zeggen dat het voor jullie geen vergadering is.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Verrassingsvergadering - 
+                            15 / 12 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">De leiding voorziet een verrassing. Kom allemaal met de fiets en neem een zakcentje mee.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Nieuwjaarsreceptie - 
+                            21 / 12 / 2019
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vandaag is het tijd om terug te blikken op het voorbije jaar en vooruit te kijken op 2020. Neem allemaal een mooie nieuwjaarsbrief mee voor jullie leiding.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Geen vergadering - 
+                            22 / 12 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Nu dat jullie al even gedaan hebben met studeren is het aan jullie leiding om te studeren dus geen vergadering.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Geen vergadering - 
+                            28 / 12 / 2019
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Net als vorige week en de komende weken moet de leiding studeren ☹. Tot  binnenkort xxx</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Geen vergadering - 
+                            29 / 12 / 2019
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Net als vorige week en de komende weken moet de leiding studeren ☹. Tot  binnenkort xxx</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="chapter" id="jin" data-type="chapter">
+	<h1 class="chapter chapter-title" id="jin">Jinners</h1>
+
+<!-- <img src="../../assets/img/boeksken/jin.jpg" style="width:367.367px;height:auto;"> -->
+
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="section" id="jin-PR" data-type="section">
+	<h1 class="section " id="jin-PR">Programma</h1>
+
+<!-- <img src="../../assets/img/boeksken/kapoenen.jpg" style="width:367.367px;height:auto;"> -->
+
+<div class="card-body">
+        <div class="row justify-content-center">
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Filmavond - 
+                            30 / 11 / 2019
+                            
+                            (
+                            00u00
+                            
+                            -
+                            
+                            00u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Uren en afspraken komen via FB/SMS!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Gezelschapspelletjesavond - 
+                            07 / 12 / 2019
+                            
+                            (
+                            00u00
+                            
+                            -
+                            
+                            00u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Uren en afspraken komen via FB/SMS!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Opkuisfest 2.0 - 
+                            14 / 12 / 2019
+                            
+                            (
+                            00u00
+                            
+                            -
+                            
+                            00u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Uren en afspraken komen via FB/SMS!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Ribbekescontest@Mozart (Aalst) - 
+                            21 / 12 / 2019
+                            
+                            (
+                            00u00
+                            
+                            -
+                            
+                            00u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Uren en afspraken komen via FB/SMS!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Harry Potter-vergadering - 
+                            28 / 12 / 2019
+                            
+                            (
+                            00u00
+                            
+                            -
+                            
+                            00u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Uren en afspraken komen via FB/SMS!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="chapter" id="vt" data-type="chapter">
+	<h1 class="chapter chapter-title" id="vt">Voortrekkers</h1>
+
+<!-- <img src="../../assets/img/boeksken/vt.jpg" style="width:367.367px;height:auto;"> -->
+
+
+</section>
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="section" id="vt-PR" data-type="section">
+	<h1 class="section " id="vt-PR">Programma</h1>
+
+<!-- <img src="../../assets/img/boeksken/kapoenen.jpg" style="width:367.367px;height:auto;"> -->
+
+<div class="card-body">
+        <div class="row justify-content-center">
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Kroegentocht - 
+                            22 / 11 / 2019
+                            
+                            (
+                            00u00
+                            
+                            -
+                            
+                            00u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Who doesn’t love a classic kroegentocht in ninove?!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Districtsweekend - 
+                            30 / 11 / 2019
+                            
+                            (
+                            00u00
+                            
+                            -
+                            
+                            00u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Een weekend district, tis nekeer iets anders.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">poker/gezelschapspelen/irish pub - 
+                            06 / 12 / 2019
+                            
+                            (
+                            00u00
+                            
+                            -
+                            
+                            00u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">We zijn mentaal toch allemaal nog een beetje kind alleen heeft het brein soms een beetje impulsen nodig. Een poker/gezelschap edition met een laagje irish pub erboven op.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">kerstfeestje - 
+                            14 / 12 / 2019
+                            
+                            (
+                            00u00
+                            
+                            -
+                            
+                            00u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Het is weer zover; het gezelligste feest van het jaar staat weer voor de deur van het vt-lokaal!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">kerstmarkt Brussel/Gent/… + schaatsen - 
+                            20 / 12 / 2019
+                            
+                            tot
+                            21 / 12 / 2019
+                            
+                            (
+                            00u00
+                            
+                            -
+                            
+                            00u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Het is weer zover; het gezelligste feest van het jaar staat weer voor de deur van het vt-lokaal!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">filmke checken - 
+                            27 / 12 / 2019
+                            
+                            tot
+                            28 / 12 / 2019
+                            
+                            (
+                            00u00
+                            
+                            -
+                            
+                            00u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vanavond gaan we gezellig een filmke checken om het cultuurgehalte weer op peil te houden.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+
+<!--back-matter-->
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+<section class="back-cover" id="back-cover" data-type="back-cover">
+
+<div class="back-cover-title">'T Boekske</div>
+<div class="back-cover-subtitle">6-Wekelijks programma van Scouts Ninove</div>
+<div class="back-cover-text">
+  <p>Ben je op zoek naar een leuke jeugdbeweging in Ninove, dan hopen wij hier uw interesse te wekken voor de jongensscouts Ninove! Iedereen is welkom voor enkele vergaderingen te proberen, inschrijven kan vanaf heden ook online. </p>
+</div>
+<div class="back-cover-bottom">
+<!--   <div class="back-cover-qr"><img src='/images/hopper.jpg}}' alt='Lidnummer Hopper'/></div>
+ --></div>
+<div class="back-cover-meta">Cover:  by </div>
+
+</section>
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+
+</body>
+</html>
