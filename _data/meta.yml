@@ -1,0 +1,112 @@
+# ==============================================================================
+# Project
+# ------------------------------------------------------------------------------
+#
+# This file houses the info and general metadata for your project.
+
+project:
+  # The name of the organisation or entity that owns this project
+  organisation: "Scouts Ninove"
+  # A live web address for the organisation
+  url: "https://ScoutsNinove.be/"
+  # The default contact email address
+  email: "jens.dufour@outlook.com"
+  # The name of the project of books in this folder.
+  name: "Boekske"
+  # A one-liner about this project. Useful for Open Graph metadata.
+  description: "6-Wekelijks programma van Scouts Ninove"
+
+# ==============================================================================
+# Works
+# ------------------------------------------------------------------------------
+#
+# This file houses the bibliographic info and general metadata for your digital
+# publication.
+
+work:
+  directory           : ""
+  contents_directory  : "content" # Your contents directory, if you have one. Begin with a '/' or empty ''.
+# ------------------------------------------------------------------------------
+# Title & Description
+# ------------------------------------------------------------------------------
+  title               : "'T Boekske"      # e.g. The four seasons <Recording title proper (RDA 2.3.2)>
+  subtitle            : "6-Wekelijks programma van Scouts Ninove"   # e.g. the revenant <Recording other title information>
+  edition             : "First edition"   # e.g. First edition, Revised <Recording edition statement (RDA 2.5)>
+  status              : published             # draft, revised, published
+# ------------------------------------------------------------------------------
+# Products
+# ------------------------------------------------------------------------------
+  products: # Metadata for each product for this title (only use values that override parent metadata)
+    paged-view:
+      image: "cover.jpg"
+      layout: book
+      files:
+        cover: "0-0-cover"
+        front_matter:
+          - file: "0-1-toc"
+            id: "toc"
+            class: "toc"
+        body_matter:
+          - file: "00-00-groepsleiding" # Woordje van de Groepsleiding
+            id: "woordjevandegroepsleiding"
+            label: "Woordje van de Groepsleiding"
+            class: "chapter"
+            level: 1                  
+          - file: "01-00-kapoenen"   # KAPOENEN
+            label: "Kapoenen"     
+            id: "kapoenen"        
+            class: "chapter"        
+            level: 1 
+          - file: "01-01-kapoenen"   # KAPOENEN
+            label: "Programma"     
+            id: "kapoenen-PR"        
+            class: "section"        
+          - file: "02-00-welpen"     # WELPEN
+            label: "Welpen"
+            id: "welpen"
+            class: "chapter"
+            level: 1
+          - file: "02-01-welpen"   # WELPEN
+            label: "Programma"     
+            id: "welpen-PR"        
+            class: "section"    
+          - file: "03-00-jvk"     # JVK
+            label: "Jongverkenners"
+            id: "jvk"
+            class: "chapter"
+            level: 1
+          - file: "03-01-jvk"   # JVK
+            label: "Programma"     
+            id: "jvk-PR"        
+            class: "section"    
+          - file: "04-00-vk"    # VK
+            label: "Verkenners"
+            id: "vk"
+            class: "chapter"
+            level: 1
+          - file: "04-01-vk"   # VK
+            label: "Programma"     
+            id: "vk-PR"        
+            class: "section"    
+          - file: "05-00-jin"     # JIN
+            label: "Jinners"
+            id: "jin"
+            class: "chapter"
+            level: 1
+          - file: "05-01-jin"   # JIN
+            label: "Programma"     
+            id: "jin-PR"        
+            class: "section"    
+          - file: "06-00-vt"     # VT
+            label: "Voortrekkers"
+            id: "vt"
+            class: "chapter"
+            level: 1
+          - file: "06-01-vt"   # VT
+            label: "Programma"     
+            id: "vt-PR"        
+            class: "section"    
+        back_matter:
+          - file: "0-2-back-cover"    # required. filename if the required file in the 'work/contents' (book/text) directory
+            id: "back-cover"          # optional (for layout). We recommend to put the same value as the 'type' value in the md file
+            class: "back-cover"       # optional (for layout).
