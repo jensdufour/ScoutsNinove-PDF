@@ -1,0 +1,29 @@
+# ----
+# Site
+
+title               : "'T Boekske"
+
+# ----
+# Book
+
+bookTitle           : "'T Boekske'" # Required
+cc                  : CC-BY # Choose a Creative Commons license (https://creativecommons.org/choose/)
+status              : published # draft, revised, published
+
+# -----
+# Build
+
+locale              : nl_BE
+encoding            : UTF-8
+timezone            : Etc/UTC
+permalink           : pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - materials
+  - package.json
+  - package-lock.json
+  - bin

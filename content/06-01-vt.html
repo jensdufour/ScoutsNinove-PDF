@@ -1,0 +1,54 @@
+---
+title: "Kapoenen"
+type: section
+---
+
+{% include metadata %}
+
+<!-- <img src="../../assets/img/boeksken/kapoenen.jpg" style="width:367.367px;height:auto;"> -->
+
+
+<div class="card-body">
+        <div class="row justify-content-center">
+            {% for item in site.data.programma.oudbaas %}
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    {% if item.afbeelding %}
+                    <img class="card-img-top w-100 d-block" src="{{ item.afbeelding }}" />
+                    {% endif %}
+                    <div class="card-body info">
+                        <h4 class="card-title">{{ item.naam }} - 
+                            {{ item.startdatum }}
+                            {% if item.einddatum %}
+                            tot
+                            {{ item.einddatum }}
+                            {% endif %}
+                            ({% if item.startuur %}
+                            {{ item.startuur }}
+                            {% else %}
+                            14u
+                            {% endif %}
+                            -
+                            {% if item.einduur %}
+                            {{ item.einduur }}
+                            {% else %}
+                            17u
+                            {% endif %}
+                            )
+                        </h4>
+                        <p class="card-text text-justify">{{ item.beschrijving }}</p>
+                        <p class="card-text">{{ item.telefoonnummer }}</p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <br>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
