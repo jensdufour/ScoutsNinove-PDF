@@ -1,4 +1,0 @@
----
-title: "Programma"
-layout: print
----
