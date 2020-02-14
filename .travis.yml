@@ -1,7 +1,8 @@
 language: ruby
 cache: bundler
-before_install: 
-  - gem update bundler
+before_install:
+  - yes | gem update --system --force
+  - gem install bundler
 install:
   - bundle install
 branches:
@@ -10,9 +11,10 @@ branches:
 script:
   - JEKYLL_ENV=production bundle exec jekyll build --destination site
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  keep_history: true
-  on:
-    branch: master
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    keep-history: true
+    local-dir: ./site
+    on:
+      branch: master
