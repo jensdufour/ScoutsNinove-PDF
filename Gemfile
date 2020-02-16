@@ -14,4 +14,5 @@ gem 'jgd'
 
 group :jekyll_plugins do
   gem 'jekyll-figure'
+  gem 'jekyll-strapi', github: 'strapi/jekyll-strapi'
 end

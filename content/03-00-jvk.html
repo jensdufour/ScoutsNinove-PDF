@@ -5,7 +5,7 @@ type: chapter
 
 {% include metadata %}
 
-{% if site.data.voorwoord.jonverkenners %}
-<p class="text-justify">{{ site.data.voorwoord.jongverkenners }}</p>
+{% if strapi.collections.Voorwoords[3].Voorwoord %}
+<p class="text-justify">{{ strapi.collections.Voorwoords[3].Voorwoord | markdownify  }}</p>
 {% endif %}
 

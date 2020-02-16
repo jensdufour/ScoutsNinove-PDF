@@ -7,35 +7,33 @@ type: section
 
 <div class="card-body">
     <div class="row justify-content-center">
-        {% for item in site.data.programma.kapoenen %}
+        {% for item in strapi.collections.Kapoenens %}
         <div class="col-sm-12 col-lg-12">
             <div class="card clean-card text-center">
                 {% if item.afbeelding %}
-                <img class="card-img-top w-100 d-block" src="{{ item.afbeelding }}" />
+                <img class="card-img-top w-100 d-block" src="{{ item.Afbeelding }}" />
                 {% endif %}
                 <div class="card-body info">
-                    <h4 class="card-title">{{ item.naam }} - 
-                        {{ item.startdatum }}
-                        {% if item.einddatum %}
+                    <h4 class="card-title">{{ item.Vergadering }} - 
+                        {{ item.Start | date: "%d/%m/%Y" }}
+                        {% if item.Einde %}
                         tot
-                        {{ item.einddatum }}
+                        {{ item.Einde | date: "%d/%m/%Y" }}
                         {% endif %}
-                        ({% if item.startuur %}
-                        {{ item.startuur }}
+                        ({% if item.Start %}
+                        {{ item.Start | date: "%H:%M" }}
                         {% else %}
                         14u
                         {% endif %}
                         -
-                        {% if item.einduur %}
-                        {{ item.einduur }}
+                        {% if item.Einde %}
+                        {{ item.Einde | date: "%H:%M" }}
                         {% else %}
                         17u
                         {% endif %}
                         )
                     </h4>
-                    <p class="card-text text-justify">{{ item.beschrijving }}</p>
-                    <p class="card-text">{{ item.telefoonnummer }}</p>
-
+                    <p class="card-text text-justify">{{ item.Beschrijving }}</p>
                 </div>
                 <div>
                     <p>
