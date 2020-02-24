@@ -1,10 +1,9 @@
 language: ruby
 cache: bundler
+os: linux
 before_install:
   - yes | gem update --system --force
   - gem install bundler
-  - wget -P ./_data https://raw.githubusercontent.com/jensdufour/ScoutsNinove/master/_data/programma.yml
-  - wget -P ./_data https://raw.githubusercontent.com/jensdufour/ScoutsNinove/master/_data/voorwoord.yml
 install:
   - bundle install
 branches:
@@ -14,9 +13,9 @@ script:
   - JEKYLL_ENV=production bundle exec jekyll build --destination site
 deploy:
   - provider: pages
-    skip-cleanup: true
-    github-token: $GITHUB_TOKEN
-    keep-history: true
-    local-dir: ./site
+    cleanup: false
+    token: $GITHUB_TOKEN
+    keep_history: true
+    local_dir: ./site
     on:
       branch: master
