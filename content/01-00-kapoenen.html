@@ -6,5 +6,5 @@ type: chapter
 {% include metadata %}
 
 {% if strapi.collections.Voorwoords[1].Voorwoord %}
-<p class="text-justify">{{ strapi.collections.Voorwoords[1].Voorwoord  | markdownify }}</p>
+<p class="text-justify">{{ site.data.voorwoord.kapoenen | markdownify }}</p>
 {% endif %}
