@@ -9,6 +9,9 @@ install:
 branches:
   only:
   - master
+before_script:
+  - wget -O ./_data/voorwoord.yml https://raw.githubusercontent.com/jensdufour/ScoutsNinove/master/_data/voorwoord.yml
+  - wget -O ./_data/programma.yml https://raw.githubusercontent.com/jensdufour/ScoutsNinove/master/_data/programma.yml
 script:
   - JEKYLL_ENV=production bundle exec jekyll build --destination site
 deploy:
