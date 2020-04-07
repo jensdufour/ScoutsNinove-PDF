@@ -12,9 +12,10 @@ branches:
 script:
   - JEKYLL_ENV=production bundle exec jekyll build --destination site
 deploy:
-  - provider: pages
-    cleanup: false
+  - provider: pages:git
     token: $GITHUB_TOKEN
+    edge: true
+    skip_cleanup: true
     keep_history: true
     local_dir: ./site
     on:
