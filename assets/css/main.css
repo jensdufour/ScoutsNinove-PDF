@@ -326,28 +326,11 @@ mark { background-color: #fdffb6; }
 
 kbd { display: inline-block; margin-bottom: 0.4em; padding: 1px 8px; border: #CCC 1px solid; color: #666; text-shadow: #FFF 0 1px 0; font-size: 0.9em; font-weight: 700; background: #F4F4F4; border-radius: 4px; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset; }
 
-@media only screen and (max-width: 900px) { blockquote { margin-left: 0; }
-  hr, .content h3::before, footer h3::before { margin: 2.4em 0; }
-  ol, ul { padding-left: 2em; }
-  h1 { font-size: 4.5rem; text-indent: -2px; }
-  h2 { font-size: 3.6rem; }
-  h3 { font-size: 3.1rem; }
-  h4 { font-size: 2.5rem; }
-  h5 { font-size: 2.2rem; }
-  h6 { font-size: 1.8rem; } }
+@media only screen and (max-width: 900px) { blockquote { margin-left: 0; } hr, .content h3::before, footer h3::before { margin: 2.4em 0; } ol, ul { padding-left: 2em; } h1 { font-size: 4.5rem; text-indent: -2px; } h2 { font-size: 3.6rem; } h3 { font-size: 3.1rem; } h4 { font-size: 2.5rem; } h5 { font-size: 2.2rem; } h6 { font-size: 1.8rem; } }
 
 @media only screen and (min-width: 900px) { header h1 { line-height: 1.5; } }
 
-@media only screen and (max-width: 500px) { hr, .content h3::before, footer h3::before { margin: 1.75em 0; }
-  p, .settings-panel-example, ul, ol, dl { font-size: 0.95em; margin: 0 0 2.5rem 0; }
-  h1, h2, h3, h5, h6 { margin: 0 0 0.3em 0; }
-  h1 { font-size: 2.8rem; letter-spacing: -1px; }
-  header h1 { line-height: 1.2; }
-  h2 { font-size: 2.4rem; letter-spacing: 0; }
-  h3 { font-size: 2.1rem; }
-  h4 { font-size: 1.9rem; margin: 2em 0 0.3em 0; }
-  h5 { font-size: 1.8rem; }
-  h6 { font-size: 1.8rem; } }
+@media only screen and (max-width: 500px) { hr, .content h3::before, footer h3::before { margin: 1.75em 0; } p, .settings-panel-example, ul, ol, dl { font-size: 0.95em; margin: 0 0 2.5rem 0; } h1, h2, h3, h5, h6 { margin: 0 0 0.3em 0; } h1 { font-size: 2.8rem; letter-spacing: -1px; } header h1 { line-height: 1.2; } h2 { font-size: 2.4rem; letter-spacing: 0; } h3 { font-size: 2.1rem; } h4 { font-size: 1.9rem; margin: 2em 0 0.3em 0; } h5 { font-size: 1.8rem; } h6 { font-size: 1.8rem; } }
 
 pre, code, tt { font-family: "Fira Mono", monospace; font-size: 0.85em; white-space: pre-wrap; border-radius: 2px; line-height: 1.4; font-weight: 400; background-color: #404145; color: #FAFAFA; border-radius: 2px; }
 
@@ -377,12 +360,7 @@ body.nav-open header { bottom: 0; }
 
 body::before { content: ""; background-color: #ffffff; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; }
 
-@media (min-width: 700px) { body { padding: 0 0 0 335px; }
-  body.nav-open { overflow: auto; }
-  body::after, body::before { content: ""; position: fixed; top: 0; bottom: 0; z-index: -1; }
-  body::after { left: 0; width: 335px; background-color: #f5f5f5; }
-  body #search-input, body::after { box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1); }
-  body::before { left: 335px; right: 0; background-color: #ffffff; } }
+@media (min-width: 700px) { body { padding: 0 0 0 335px; } body.nav-open { overflow: auto; } body::after, body::before { content: ""; position: fixed; top: 0; bottom: 0; z-index: -1; } body::after { left: 0; width: 335px; background-color: #f5f5f5; } body #search-input, body::after { box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1); } body::before { left: 335px; right: 0; background-color: #ffffff; } }
 
 /* Main */
 .main, footer { margin-top: 87px; }
@@ -412,9 +390,7 @@ header .open-nav:focus { outline: none; background-color: rgba(0, 0, 0, 0.05); }
 
 header .open-nav:hover { background-color: rgba(0, 0, 0, 0.1); }
 
-@media (min-width: 700px) { header { background-color: transparent; width: 335px; right: auto; bottom: auto; }
-  header .open-nav { display: none; }
-  header h1 { box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1); } }
+@media (min-width: 700px) { header { background-color: transparent; width: 335px; right: auto; bottom: auto; } header .open-nav { display: none; } header h1 { box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1); } }
 
 .content, footer { position: relative; background-color: #ffffff; color: #222; }
 
@@ -428,8 +404,7 @@ header .open-nav:hover { background-color: rgba(0, 0, 0, 0.1); }
 
 .page-header h3 { font-size: 4rem; margin-left: -4px; }
 
-@media (min-width: 700px) { .page-header h2 { font-size: 2.65rem; }
-  .page-header h3 { font-size: 5.4rem; } }
+@media (min-width: 700px) { .page-header h2 { font-size: 2.65rem; } .page-header h3 { font-size: 5.4rem; } }
 
 @media (min-width: 1265px) { .page-header { margin-top: 55px; } }
 
@@ -441,9 +416,7 @@ header .open-nav:hover { background-color: rgba(0, 0, 0, 0.1); }
 
 .page-cover p, .page-cover .settings-panel-example { font-family: "Fira Mono", monospace; font-weight: 600; margin-top: 3rem; font-size: 2rem; margin-bottom: 5rem; }
 
-@media (min-width: 700px) { .page-cover h2 { font-size: 5.5rem; }
-  .page-cover h3 { font-size: 3.5rem; }
-  .page-cover p, .page-cover .settings-panel-example { font-size: 2.5rem; } }
+@media (min-width: 700px) { .page-cover h2 { font-size: 5.5rem; } .page-cover h3 { font-size: 3.5rem; } .page-cover p, .page-cover .settings-panel-example { font-size: 2.5rem; } }
 
 @media (min-width: 1265px) { .page-cover { margin-top: 55px; } }
 
@@ -479,10 +452,7 @@ nav:not(.full-navigation) .nav-item.current > ul { display: block; }
 
 .settings-panel-example .example { max-width: 300px; background-color: #fafafa; margin: 0; padding: 0; font-size: 0; line-height: 1; border-radius: 2px; overflow: hidden; }
 
-@media (min-width: 960px) { .settings-panel-example { -webkit-flex-direction: row; flex-direction: row; }
-  .settings-panel-example .details { -webkit-flex: 1; flex: 1; margin-right: 20px; }
-  .settings-panel-example p + .highlight > pre, .settings-panel-example .settings-panel-example + .highlight > pre { margin-bottom: 0; }
-  .settings-panel-example .example { -webkit-flex: 0 0 300px; flex: 0 0 300px; max-width: 100%; } }
+@media (min-width: 960px) { .settings-panel-example { -webkit-flex-direction: row; flex-direction: row; } .settings-panel-example .details { -webkit-flex: 1; flex: 1; margin-right: 20px; } .settings-panel-example p + .highlight > pre, .settings-panel-example .settings-panel-example + .highlight > pre { margin-bottom: 0; } .settings-panel-example .example { -webkit-flex: 0 0 300px; flex: 0 0 300px; max-width: 100%; } }
 
 .highlight { margin-left: 0; margin-right: 0; }
 

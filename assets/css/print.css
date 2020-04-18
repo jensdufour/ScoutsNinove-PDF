@@ -17,14 +17,7 @@
 
 /* Interface */
 /* To define how the book look on the screen: */
-@media screen { body { background-color: var(--color-background); }
-  .pagedjs_pages { display: flex; width: calc(var(--width) * 2); flex: 0; flex-wrap: wrap; margin: 0 auto; }
-  .pagedjs_page { background-color: var(--color-paper); box-shadow: 0 0 0 1px var(--color-pageBox); margin: 0; flex-shrink: 0; flex-grow: 0; margin-top: 10mm; }
-  .pagedjs_first_page { margin-left: var(--width); }
-  /* show the margin-box */
-  .pagedjs_margin-content { box-shadow: 0 0 0 1px inset var(--color-marginBox); }
-  /* uncomment for recto/verso book. --------------------------------------------------- */
-  /* .pagedjs_pages { flex-direction: column; width: 100%; } .pagedjs_first_page { margin-left: 0; } .pagedjs_page { margin: 0 auto; margin-top: 10mm; } */ }
+@media screen { body { background-color: var(--color-background); } .pagedjs_pages { display: flex; width: calc(var(--width) * 2); flex: 0; flex-wrap: wrap; margin: 0 auto; } .pagedjs_page { background-color: var(--color-paper); box-shadow: 0 0 0 1px var(--color-pageBox); margin: 0; flex-shrink: 0; flex-grow: 0; margin-top: 10mm; } .pagedjs_first_page { margin-left: var(--width); } /* show the margin-box */ .pagedjs_margin-content { box-shadow: 0 0 0 1px inset var(--color-marginBox); } /* uncomment for recto/verso book. --------------------------------------------------- */ /* .pagedjs_pages { flex-direction: column; width: 100%; } .pagedjs_first_page { margin-left: 0; } .pagedjs_page { margin: 0 auto; margin-top: 10mm; } */ }
 
 /* print css that's being rendered on screen */
 /* variable used for the book */
