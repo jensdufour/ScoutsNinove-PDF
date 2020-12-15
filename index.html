@@ -461,10 +461,11 @@
 			
 			
 			
+<p>{% include metadata %}</p>
 
 <div class="cover-header">
-	<div class="cover-book-title">'T Boekske</div>
-	<div class="cover-book-subtitle">6-Wekelijks programma van Scouts Ninove</div>
+	<div class="cover-book-title">{{title}}</div>
+	<div class="cover-book-subtitle">{{subtitle}}</div>
 </div>
 <div class="cover-image-container"><img class="cover-image" src="assets/images/cover.jpg" alt="Cover" /></div>
 
@@ -560,66 +561,19 @@
 			
 			
 		<section class="toc" id="toc" data-type="toc">
+<p>{% include metadata %}</p>
 
 <section class="toc">
 <h1>Inhoudstafel</h1>
 <nav>
   <ul>
-    
-    
-    <li class="toc-1">
-      <a href="#woordjevandegroepsleiding">Woordje van de Groepsleiding</a>
+    {% for file in paged-view-file-list.body_matter %}
+    {% if file.level != nil %}
+    <li class="toc-{{file.level}}">
+      <a href="#{{file.id}}">{{file.label}}</a>
     </li>
-    
-    
-    
-    <li class="toc-1">
-      <a href="#kapoenen">Kapoenen</a>
-    </li>
-    
-    
-    
-    
-    
-    <li class="toc-1">
-      <a href="#welpen">Welpen</a>
-    </li>
-    
-    
-    
-    
-    
-    <li class="toc-1">
-      <a href="#jvk">Jongverkenners</a>
-    </li>
-    
-    
-    
-    
-    
-    <li class="toc-1">
-      <a href="#vk">Verkenners</a>
-    </li>
-    
-    
-    
-    
-    
-    <li class="toc-1">
-      <a href="#jin">Jinners</a>
-    </li>
-    
-    
-    
-    
-    
-    <li class="toc-1">
-      <a href="#vt">Voortrekkers</a>
-    </li>
-    
-    
-    
-    
+    {% endif %}
+    {% endfor %}
   </ul>
 </nav>
 </section>
@@ -850,8 +804,9 @@
 		
 <section class="chapter" id="woordjevandegroepsleiding" data-type="chapter">
 	<h1 class="chapter chapter-title" id="woordjevandegroepsleiding">Woordje van de Groepsleiding</h1>
+<p>{% include metadata %}</p>
 
-<p class="text-justify"><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;text-align:justify;">Beste Scouts, ouders en sympathisanten,</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;text-align:justify;">Alweer een Boekske dat voorbij gevlogen is met enkele memorabele momenten, waarvan het belangrijkste de overgang was. Hier konden we met trots onze nieuwe, talrijke leidingsploeg voorstellen. Jammer genoeg konden de ouders er dit jaar niet bijzijn tijdens onze traditionele opening. Daarom zal ik hier een kort overzicht geven van de leiding per tak. Om te beginnen heb je de kapoenenleiding die onder leiding van mezelf staat. Als assistenten heb ik Ward, Robbe, Simon, Niels en Alexander. Vervolgens heb je de welpenleiding. Ook hier is er heel wat veranderd, ze hebben een nieuwe akela Nicolas Dewandre. in zijn team heeft hij Emilio, Cas, Othello, Thomas en Ward. Ook de JVK krijgt een nieuwe master, deze functie zal dit jaar ingevuld worden door Senne De Coen en ook hij beschikt over een mooie leidingsploeg; Joeri, Senne, Tuur en Seppe. De verkenners kunnen nog steeds rekenen op Ruben de Vuyst als master en Max, Yente en Arnout.</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;text-align:justify;">Een nieuw scoutsjaar gaat ook samen met een nieuw thema. Het thema dit jaar is &lsquo;Tzal wel zijn!&lsquo;. Natuurlijk bedoelen we hiermee dat we er volledig voor gaan en we vergaderingen en kampen blijven organiseren. Maar het thema heeft ook een diepere betekenis. Namelijk dat we er voor mekaar zullen zijn en dat er binnen de scouts ruimte is voor meer als alleen maar het goede. Open kunnen zijn over problemen, je eens wat minder voelen, &lsquo;Tzal wel zijn&rsquo;. Op de scouts is er ruimte voor alles en iedereen.</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;text-align:justify;">Dan heb ik juist nog wat ruimte om wat reclame te maken voor onze lasagne verkoop. Lasagnes kunnen besteld worden tot 20 oktober via onze website. Tijdens de bestelling kies je dan voor een afhaalmoment dat plaatsvindt in het laatste weekend van oktober. Hopelijk kunnen we rekenen op jullie steun en ik wil jullie hier alvast voor bedanken!</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;text-align:justify;">Ik zou als laatste juist nog eens willen benadrukken dat iedereen met vragen of opmerkingen mij steeds kan bereiken op het nummer 0496 46 65 78.</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;text-align:justify;">Een stevige linker en tot in den draai,</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;text-align:justify;">Ward Proesmans</p></p>
+<p class="text-justify">{{ site.data.voorwoord.groepsleiding }}</p>
 
 </section>
 		
@@ -901,7 +856,11 @@
 		
 <section class="chapter" id="kapoenen" data-type="chapter">
 	<h1 class="chapter chapter-title" id="kapoenen">Kapoenen</h1>
+<p>{% include metadata %}</p>
 
+<p>{% if site.data.voorwoord.kapoenen %}</p>
+<p class="text-justify">{{ site.data.voorwoord.kapoenen }}</p>
+<p>{% endif %}</p>
 
 </section>
 		
@@ -951,91 +910,38 @@
 		
 <section class="section" id="kapoenen-PR" data-type="section">
 	<h1 class="section " id="kapoenen-PR">Programma</h1>
+<p>{% include metadata %}</p>
 
 <div class="card-body">
     <div class="row justify-content-center">
-        
+        {% for item in site.data.programma.kapoenen %}
         <div class="col-sm-12 col-lg-12">
             <div class="card clean-card text-center">
-                
+                {% if item.afbeelding %}
+                <img class="card-img-top w-100 d-block" src="{{ item.afbeelding }}" />
+                {% endif %}
                 <div class="card-body info">
-                    <h4 class="card-title">Bunkertocht - 
-                        18/10/2020
-                        
-                        (
-                        14u00
-                        
-                        -
-                        
-                        17u00
-                        
-                        )
-                    </h4>
-                    <p class="card-text text-justify">Bunkertocht is voor ons ondertussen al een vaste waarde geworden in het scoutsjaar. We stappen naar de bunkers en zullen een heuse modderoorlog houden. Vergeet zeker jullie stapschoenen en vuile kleren niet want het zal er stevig aan toe gaan!</p>
-                    <p class="card-text"></p>
-
-                </div>
-                <div>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-            <br />
-            <br />
-        </div>
-        
-        <div class="col-sm-12 col-lg-12">
-            <div class="card clean-card text-center">
-                
-                <div class="card-body info">
-                    <h4 class="card-title">Jinvergadering - 
-                        25/10/2020
-                        
-                        (
-                        14u00
-                        
-                        -
-                        
-                        17u00
-                        
-                        )
-                    </h4>
-                    <p class="card-text text-justify">Aangezien we nieuwe jinners hebben, is het aan hen om zich te bewijzen. Gerard zal een FANTASTISCHE vergadering voor jullie in elkaar te steken, wat gaan we doen? Waar gaan we het doen? Kom dat allemaal te weten om 14 uur aan het lokaal!</p>
-                    <p class="card-text"></p>
-
-                </div>
-                <div>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-            <br />
-            <br />
-        </div>
-        
-        <div class="col-sm-12 col-lg-12">
-            <div class="card clean-card text-center">
-                
-                <div class="card-body info">
-                    <h4 class="card-title">Halloween weekend - 
-                        31/10/2020
-                        
+                    <h4 class="card-title">{{ item.naam }} - 
+                        {{ item.startdatum }}
+                        {% if item.einddatum %}
                         tot
-                        1/11/2020
-                        
-                        (
-                        12u00
-                        
+                        {{ item.einddatum }}
+                        {% endif %}
+                        ({% if item.startuur %}
+                        {{ item.startuur }}
+                        {% else %}
+                        14u
+                        {% endif %}
                         -
-                        
-                        12u00
-                        
+                        {% if item.einduur %}
+                        {{ item.einduur }}
+                        {% else %}
+                        17u
+                        {% endif %}
                         )
                     </h4>
-                    <p class="card-text text-justify">We gaan onze eerste overnachting in het lokaal doen, er staat vanalles op het programma. Komen is de boodschap! Ik kan jullie al zeggen dat we zaterdag om 12u afspreken aan het lokaal en we de zondag om 12u weer zullen afsluiten aan het lokaal. Verdere info zal nog volgen via een brief.</p>
-                    <p class="card-text"></p>
+                    <p class="card-text text-justify">{{ item.beschrijving }}</p>
+                    <p class="card-text">{{ item.telefoonnummer }}</p>
 
                 </div>
                 <div>
@@ -1047,97 +953,7 @@
             <br />
             <br />
         </div>
-        
-        <div class="col-sm-12 col-lg-12">
-            <div class="card clean-card text-center">
-                
-                <div class="card-body info">
-                    <h4 class="card-title">Pizza's maken - 
-                        15/11/2020
-                        
-                        (
-                        10u00
-                        
-                        -
-                        
-                        12u30
-                        
-                        )
-                    </h4>
-                    <p class="card-text text-justify">Vandaag gaan we van de kapoenen echte Italianen maken. We zullen ze opleiden tot echte pizza makers! Opgelet de uren vandaag zijn anders, we spreken af om 10u en sluiten af om 12u30.</p>
-                    <p class="card-text"></p>
-
-                </div>
-                <div>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-            <br />
-            <br />
-        </div>
-        
-        <div class="col-sm-12 col-lg-12">
-            <div class="card clean-card text-center">
-                
-                <div class="card-body info">
-                    <h4 class="card-title">Race vergadering - 
-                        15/11/2020
-                        
-                        (
-                        14u00
-                        
-                        -
-                        
-                        17u00
-                        
-                        )
-                    </h4>
-                    <p class="card-text text-justify">Vandaag gaan we kijken wie van jullie een echte snelheidsduivel is! Je mag alles op wieltjes meenemen, ik denk aan fietsen, steppen, skateboard… We spreken af om 14u aan het lokaal en sluiten ook hier weer af om 17u.</p>
-                    <p class="card-text"></p>
-
-                </div>
-                <div>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-            <br />
-            <br />
-        </div>
-        
-        <div class="col-sm-12 col-lg-12">
-            <div class="card clean-card text-center">
-                
-                <div class="card-body info">
-                    <h4 class="card-title">Blaaspijpen - 
-                        22/11/2020
-                        
-                        (
-                        14u00
-                        
-                        -
-                        
-                        17u00
-                        
-                        )
-                    </h4>
-                    <p class="card-text text-justify">Dit is een vergadering voor de scherpschutters onder de kapoenen. We toveren het lokaal om tot een paintball terrein waar jullie zich in ‘Call of Duty’-stijl met een blaaspijp helemaal kunnen uitleven. Vergeet zeker geen munitie mee te nemen in de vorm van een rol wc papier!</p>
-                    <p class="card-text"></p>
-
-                </div>
-                <div>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-            <br />
-            <br />
-        </div>
-        
+        {% endfor %}
     </div>
 </div>
 
@@ -1189,7 +1005,11 @@
 		
 <section class="chapter" id="welpen" data-type="chapter">
 	<h1 class="chapter chapter-title" id="welpen">Welpen</h1>
+<p>{% include metadata %}</p>
 
+<p>{% if site.data.voorwoord.welpen %}</p>
+<p class="text-justify">{{ site.data.voorwoord.welpen }}</p>
+<p>{% endif %}</p>
 
 </section>
 		
@@ -1239,121 +1059,38 @@
 		
 <section class="section" id="welpen-PR" data-type="section">
 	<h1 class="section " id="welpen-PR">Programma</h1>
+<p>{% include metadata %}</p>
 
 <div class="card-body">
         <div class="row justify-content-center">
-            
+            {% for item in site.data.programma.welpen %}
             <div class="col-sm-12 col-lg-12">
                 <div class="card clean-card text-center">
-                    
+                    {% if item.afbeelding %}
+                    <img class="card-img-top w-100 d-block" src="{{ item.afbeelding }}" />
+                    {% endif %}
                     <div class="card-body info">
-                        <h4 class="card-title">Racevergadering - 
-                            18/10/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Deze zondag mogen jullie alles met wielen meenemen naar de scouts skateboard, step, segway, eenwieler, noem maar op. We zullen zo eens testen wie er de snelste welp is en wie de ultieme race zal winnen. De vergadering zal doorgaan van 14u tot 17u en we spreken af aan het dokter Hemerijckxplein en sluiten daar ook af</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Blaaspijpenvergadering - 
-                            25/10/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Het is weer van dat, de zondag wanneer niemand veilig is Blaaspijpenvergadering! Wie wordt er als eerste geraakt? En wie wint de slag om het lokaal? Neem een wc-rol mee als ammunitie en blazen maar! Van 14u tot 17u aan het dokter Hemerijckxplein.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Alles-met-een-bal-vergadering - 
-                            01/11/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Een bal is een bolvormig voorwerp. Ballen, die in sport en spel worden gebruikt, zijn meestal equivalent aan de bolvorm. Ze zijn dan zo rond mogelijk, afhankelijk van de nauwkeurigheid van het productieproces, de gebruikte materialen, de gebruiksomstandigheden, de oppervlakteafwerking, etc. Deze moeilijke uitleg van wikipedia hebben wij natuurlijk niet nodig om te weten waarvoor we een bal allemaal kunnen gebruiken. Jullie kunnen zeker al raden welke spelletjes we zullen spelen, maar vergis jullie niet er zullen vast en zeker balspelletjes zijn die jullie nog niet kennen. We spreken af op de normale uren aan het dokter Hemerijckxplein.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Herfstweekend - 
-                            7/11/2020
-                            
+                        <h4 class="card-title">{{ item.naam }} - 
+                            {{ item.startdatum }}
+                            {% if item.einddatum %}
                             tot
-                            8/11/2020
-                            
-                            (
-                            11u00
-                            
+                            {{ item.einddatum }}
+                            {% endif %}
+                            ({% if item.startuur %}
+                            {{ item.startuur }}
+                            {% else %}
+                            14u
+                            {% endif %}
                             -
-                            
-                            12u30
-                            
+                            {% if item.einduur %}
+                            {{ item.einduur }}
+                            {% else %}
+                            17u
+                            {% endif %}
                             )
                         </h4>
-                        <p class="card-text text-justify">Hou dit weekend maar vrij in jullie agenda want we gaan op weekend en overnachten samen in ons eigen lokaal! We spreken 7 november af om 11u aan ons lokaal en afsluiten doen we zondag om 12u30. Er zal nog een brief volgen met extra info.</p>
-                        <p class="card-text"></p>
+                        <p class="card-text text-justify">{{ item.beschrijving }}</p>
+                        <p class="card-text">{{ item.telefoonnummer }}</p>
     
                     </div>
                     <div>
@@ -1365,67 +1102,7 @@
                 <br />
                 <br />
             </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Sterkste welp - 
-                            15/11/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Nu we er een nieuwe lading welpen bijhebben zullen we naar jaarlijkse traditie nog eens moeten uitmaken wie de sterkste welp is. Diegene die alle proeven doorstaat en de beste tijd neerzet kan een prijs winnen! Train jullie spieren alvast thuis door wat te pompen want deze zondag is het niet voor watjes! Afspraak om 14u aan het dokter Hemeryckxplein en afsluiten om 17u aan datzelfde plein.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Jinvergadering - 
-                            22/11/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Vandaag heeft de jinner die dit boekske bij ons stond een knotsgekke vergadering voor jullie voorbereid. Kom dat zien! We spreken af aan het dokter Hemeryckxplein op de normale uren.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
+            {% endfor %}
         </div>
     </div>
 
@@ -1477,6 +1154,11 @@
 		
 <section class="chapter" id="jvk" data-type="chapter">
 	<h1 class="chapter chapter-title" id="jvk">Jongverkenners</h1>
+<p>{% include metadata %}</p>
+
+<p>{% if site.data.voorwoord.jonverkenners %}</p>
+<p class="text-justify">{{ site.data.voorwoord.jongverkenners }}</p>
+<p>{% endif %}</p>
 
 
 </section>
@@ -1527,28 +1209,38 @@
 		
 <section class="section" id="jvk-PR" data-type="section">
 	<h1 class="section " id="jvk-PR">Programma</h1>
+<p>{% include metadata %}</p>
 
 <div class="card-body">
         <div class="row justify-content-center">
-            
+            {% for item in site.data.programma.jongverkenners %}
             <div class="col-sm-12 col-lg-12">
                 <div class="card clean-card text-center">
-                    
+                    {% if item.afbeelding %}
+                    <img class="card-img-top w-100 d-block" src="{{ item.afbeelding }}" />
+                    {% endif %}
                     <div class="card-body info">
-                        <h4 class="card-title">Hotdogrun - 
-                            17/10/2020
-                            
-                            (
-                            18u30
-                            
+                        <h4 class="card-title">{{ item.naam }} - 
+                            {{ item.startdatum }}
+                            {% if item.einddatum %}
+                            tot
+                            {{ item.einddatum }}
+                            {% endif %}
+                            ({% if item.startuur %}
+                            {{ item.startuur }}
+                            {% else %}
+                            14u
+                            {% endif %}
                             -
-                            
-                            19u30
-                            
+                            {% if item.einduur %}
+                            {{ item.einduur }}
+                            {% else %}
+                            17u
+                            {% endif %}
                             )
                         </h4>
-                        <p class="card-text text-justify">Komt dat zien! Komt dat zien! De grote race der races! Welke jongverkenner loopt er het snelst naar de hotdogs? Dit komen we vandaag allemaal te weten. Het beloofd spannend te worden.</p>
-                        <p class="card-text"></p>
+                        <p class="card-text text-justify">{{ item.beschrijving }}</p>
+                        <p class="card-text">{{ item.telefoonnummer }}</p>
     
                     </div>
                     <div>
@@ -1560,337 +1252,7 @@
                 <br />
                 <br />
             </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Techniekenvergadering - 
-                            18/10/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Aangezien er vele jongverkenners zijn overgekomen van de welpen, wordt het tijd om eens aan hun technieken te werken. Neem zeker jullie roomer en kompas mee!</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Dominovergadering - 
-                            24/10/2020
-                            
-                            (
-                            18u30
-                            
-                            -
-                            
-                            19u30
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Het concept spreekt voor zich, breng allemaal zoveel mogelijk blokjes mee zodat we er een ware Domino Day van kunnen maken. Wie weet worden er wel enkele records gebroken.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Rechtdoortocht - 
-                            25/10/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Nadat de techniekenvergadering een groot succes was, is het nu tijd om jullie technieken in de praktijk te testen. Vandaag kunnen tonen hoeveel jullie onthouden hebben van de vorige vergadering.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Casinovergadering - 
-                            31/10/2020
-                            
-                            (
-                            18u30
-                            
-                            -
-                            
-                            19u30
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Waag dit weekend je kans met al onze casinospelen en wie weet word jij wel rijk! Doe allemaal maar jullie kostuum aan, want we gaan een heel weekend naar het casino!</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Casinovergadering - 
-                            1/11/2020
-                            
-                            (
-                            08u15
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Deel twee van het casino-avontuur. Sommigen zullen hun verliezen kunnen terugverdienen, anderen zullen dan weer hun winsten volledig kunnen kwijtspelen... Spannend!</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Zeg-eens-“euhm”-vergadering - 
-                            7/11/2020
-                            
-                            (
-                            18u30
-                            
-                            -
-                            
-                            19u30
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Euhm euhm euhm…. Ben jij de meester in euhm verhalen te vertellen zonder euhm  “euhm” te moeten zeggen? euhm Vandaag gaan we dat euhm ontdekken. Ik zie jullie euhm euhm euhm op de zeg-eens-euhm-vergadering.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Jinvergadering - 
-                            8/11/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Onze jinner heeft een super zotte vergadering in elkaar gestoken, sommige zeggen dat het misschien wel de tofste vergadering van het jaar zou kunnen worden. Kom en zie!</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Coladammen - 
-                            14/11/2020
-                            
-                            (
-                            18u30
-                            
-                            -
-                            
-                            19u30
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Wie kan er het beste dammen? Wie kan er het beste de schijven van de andere schuin nemen? De spelregels van dammen zijn duidelijk:SLAAN IS VERPLICHT! Wat hiermee allemaal wordt bedoeld komen we vandaag te weten.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Ontbijten verkopen - 
-                            15/11/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Trek allemaal maar jullie botinnen aan, want we gaan op pad! Op verkooppad! Wie heeft de beste verkooppraatjes en -trucs? De leiding is alleszins benieuwd.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Kubbvergadering - 
-                            21/11/2020
-                            
-                            (
-                            18u30
-                            
-                            -
-                            
-                            19u30
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Vandaag spelen we een klassieker. Wie onder jullie heeft de precisie om de blokken omver te kegelen en de tegenstander te verslaan?</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Ontbijten verkopen - 
-                            22/11/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Spreekt voor zich, alleman een gezelschapspel mee. Hopelijk kan iedereen wat tegen zijn verlies, want de leiding weet al wie gaat winnen!</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
+            {% endfor %}
         </div>
     </div>
 
@@ -1942,9 +1304,11 @@
 		
 <section class="chapter" id="vk" data-type="chapter">
 	<h1 class="chapter chapter-title" id="vk">Verkenners</h1>
+<p>{% include metadata %}</p>
 
-<p class="text-justify"><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">Beste verkenner, ouder(s) en sympathisanten</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">&nbsp;</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">Het eerste boekje zit er alweer op. Het waren zes productieve weken waarin we veel nieuwe gezichten hebben leren kennen. Ik ben ervan overtuigd dat iedereen zijn plek in de groep wel heeft kunnen vinden. De overgang is zeer goed verlopen naar de mate van het mogelijke, waarvoor onze dank naar jullie toe. Ik hoop dat de nieuwe leidingsploeg jullie ook bevalt. Ook zijn we zeer tevreden over de opkomst, en hopen dat dit in dezelfde lijn dit jaar verdergaat. Zoals jullie ook wel weten gaat de leefweek en het herfstkamp niet kunnen doorgaan. Maar op ieder probleem vinden wij wel een oplossing. Het komende boekje zal gevuld worden met voornamelijk buitenactiviteiten aangezien we met meer dan 20 verkenners zijn.</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">&nbsp;</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">Hou het veilig</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">&nbsp;</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">Stevige Linker</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">Landmeter, ICT boy, Burgie, En politiekerken.</p></p>
-
+<p>{% if site.data.voorwoord.verkenners %}</p>
+<p class="text-justify">{{ site.data.voorwoord.verkenners }}</p>
+<p>{% endif %}</p>
 
 </section>
 		
@@ -1994,28 +1358,38 @@
 		
 <section class="section" id="vk-PR" data-type="section">
 	<h1 class="section " id="vk-PR">Programma</h1>
+<p>{% include metadata %}</p>
 
 <div class="card-body">
         <div class="row justify-content-center">
-            
+            {% for item in site.data.programma.verkenners %}
             <div class="col-sm-12 col-lg-12">
                 <div class="card clean-card text-center">
-                    
+                    {% if item.afbeelding %}
+                    <img class="card-img-top w-100 d-block" src="{{ item.afbeelding }}" />
+                    {% endif %}
                     <div class="card-body info">
-                        <h4 class="card-title">Casino - 
-                            17/10/2020
-                            
-                            (
-                            18u30
-                            
+                        <h4 class="card-title">{{ item.naam }} - 
+                            {{ item.startdatum }}
+                            {% if item.einddatum %}
+                            tot
+                            {{ item.einddatum }}
+                            {% endif %}
+                            ({% if item.startuur %}
+                            {{ item.startuur }}
+                            {% else %}
+                            14u
+                            {% endif %}
                             -
-                            
-                            19u30
-                            
+                            {% if item.einduur %}
+                            {{ item.einduur }}
+                            {% else %}
+                            17u
+                            {% endif %}
                             )
                         </h4>
-                        <p class="card-text text-justify">Dresscode:rijke man. Wie zal er met het grootste kapitaal vertrekken. Wie is de opperbaas in black jack. Wie heeft er geluk in het spel en ongeluk in de liefde dus woehoeeew. Be there or be square!</p>
-                        <p class="card-text"></p>
+                        <p class="card-text text-justify">{{ item.beschrijving }}</p>
+                        <p class="card-text">{{ item.telefoonnummer }}</p>
     
                     </div>
                     <div>
@@ -2027,337 +1401,7 @@
                 <br />
                 <br />
             </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Casino - 
-                            18/10/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Dresscode:rijke man. Wie zal er met het grootste kapitaal vertrekken. Wie is de opperbaas in black jack. Wie heeft er geluk in het spel en ongeluk in de liefde dus woehoeeew. Be there or be square!</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Coladammen - 
-                            24/10/2020
-                            
-                            (
-                            18u30
-                            
-                            -
-                            
-                            19u30
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Een klassiek, gezellig en mentaal uitdagend spel, maar met een twist! Aan de ouders:gelieve uw zoon deze dag niets van snelle suikers te geven, bedankt.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Lasagneverkoop - 
-                            25/10/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Boys, jullie zijn al goed bezig geweest, maar hoe meer beter natuurlijk! Vandaag gaan we zo veel mogelijk mensen verleiden/oplichten met onze overheerlijke lasagnes. Kom massaal en schep massaal veel poen!</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Halloween - 
-                            31/10/2020
-                            
-                            (
-                            18u30
-                            
-                            -
-                            
-                            19u30
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Griezel griezel, verdere info volgt via de fb groep.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Geen vergadering - 
-                            1/11/2020
-                            
-                            (
-                            08u15
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Vandaag worden jullie verwacht bij jullie familie. Geen vergadering vandaag</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Film - 
-                            7/11/2020
-                            
-                            (
-                            18u30
-                            
-                            -
-                            
-                            19u30
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Uren worden nog meegedeeld</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Patrouilletocht - 
-                            8/11/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Botinnen aangeraden 😉</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Caféspelen - 
-                            14/11/2020
-                            
-                            (
-                            18u30
-                            
-                            -
-                            
-                            19u30
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Wie is er dartskoning, wie is er president en wie stront?... Kom dat zien!</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Kartonbattle - 
-                            15/11/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Vandaag gaan we eens kijken wie het best zijn wapen en schild ineen kan knutselen! Daarna zal het lokaal worden omgevormd tot een waar slagveld. Wie zal er met de meeste blauwe plekken naar huis gaan? Ps:pakt genoeg karton en plakband mee.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Oerhockey - 
-                            21/11/2020
-                            
-                            (
-                            18u30
-                            
-                            -
-                            
-                            19u30
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Vandaag gaan we terug naar de prehistorie en spelen we hockey zoals de australopthiceus dat 2.9 miljoen jaar geleden deed.</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
-            <div class="col-sm-12 col-lg-12">
-                <div class="card clean-card text-center">
-                    
-                    <div class="card-body info">
-                        <h4 class="card-title">Gezelschapspellekes - 
-                            22/11/2020
-                            
-                            (
-                            14u00
-                            
-                            -
-                            
-                            17u00
-                            
-                            )
-                        </h4>
-                        <p class="card-text text-justify">Spreekt voor zich, alleman een gezelschapspel mee. Hopelijk kan iedereen wat tegen zijn verlies, want de leiding weet al wie gaat winnen!</p>
-                        <p class="card-text"></p>
-    
-                    </div>
-                    <div>
-                        <p>
-    
-                        </p>
-                    </div>
-                </div>
-                <br />
-                <br />
-            </div>
-            
+            {% endfor %}
         </div>
     </div>
 
@@ -2409,9 +1453,11 @@
 		
 <section class="chapter" id="jin" data-type="chapter">
 	<h1 class="chapter chapter-title" id="jin">Jinners</h1>
+<p>{% include metadata %}</p>
 
-<p class="text-justify"><p style="margin:0cm;font-size:16px;font-family:&quot;Calibri&quot;,sans-serif;">Zie Facebook</p></p>
-
+<p>{% if site.data.voorwoord.jinners %}</p>
+<p class="text-justify">{{ site.data.voorwoord.jinners }}</p>
+<p>{% endif %}</p>
 
 </section>
 		
@@ -2461,10 +1507,50 @@
 		
 <section class="section" id="jin-PR" data-type="section">
 	<h1 class="section " id="jin-PR">Programma</h1>
+<p>{% include metadata %}</p>
 
 <div class="card-body">
         <div class="row justify-content-center">
-            
+            {% for item in site.data.programma.jinners %}
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    {% if item.afbeelding %}
+                    <img class="card-img-top w-100 d-block" src="{{ item.afbeelding }}" />
+                    {% endif %}
+                    <div class="card-body info">
+                        <h4 class="card-title">{{ item.naam }} - 
+                            {{ item.startdatum }}
+                            {% if item.einddatum %}
+                            tot
+                            {{ item.einddatum }}
+                            {% endif %}
+                            ({% if item.startuur %}
+                            {{ item.startuur }}
+                            {% else %}
+                            14u
+                            {% endif %}
+                            -
+                            {% if item.einduur %}
+                            {{ item.einduur }}
+                            {% else %}
+                            17u
+                            {% endif %}
+                            )
+                        </h4>
+                        <p class="card-text text-justify">{{ item.beschrijving }}</p>
+                        <p class="card-text">{{ item.telefoonnummer }}</p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -2516,9 +1602,11 @@
 		
 <section class="chapter" id="vt" data-type="chapter">
 	<h1 class="chapter chapter-title" id="vt">Voortrekkers</h1>
+<p>{% include metadata %}</p>
 
-<p class="text-justify"><p style="margin:0cm;font-size:16px;font-family:&quot;Calibri&quot;,sans-serif;">Zie Facebook</p></p>
-
+<p>{% if site.data.voorwoord.oudbaas %}</p>
+<p class="text-justify">{{ site.data.voorwoord.oudbaas }}</p>
+<p>{% endif %}</p>
 
 </section>
 		
@@ -2568,10 +1656,50 @@
 		
 <section class="section" id="vt-PR" data-type="section">
 	<h1 class="section " id="vt-PR">Programma</h1>
+<p>{% include metadata %}</p>
 
 <div class="card-body">
         <div class="row justify-content-center">
-            
+            {% for item in site.data.programma.oudbaas %}
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    {% if item.afbeelding %}
+                    <img class="card-img-top w-100 d-block" src="{{ item.afbeelding }}" />
+                    {% endif %}
+                    <div class="card-body info">
+                        <h4 class="card-title">{{ item.naam }} - 
+                            {{ item.startdatum }}
+                            {% if item.einddatum %}
+                            tot
+                            {{ item.einddatum }}
+                            {% endif %}
+                            ({% if item.startuur %}
+                            {{ item.startuur }}
+                            {% else %}
+                            14u
+                            {% endif %}
+                            -
+                            {% if item.einduur %}
+                            {{ item.einduur }}
+                            {% else %}
+                            17u
+                            {% endif %}
+                            )
+                        </h4>
+                        <p class="card-text text-justify">{{ item.beschrijving }}</p>
+                        <p class="card-text">{{ item.telefoonnummer }}</p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -2760,16 +1888,16 @@
 		
 		
 <section class="back-cover" id="back-cover" data-type="back-cover">
-
-<div class="back-cover-title">'T Boekske</div>
-<div class="back-cover-subtitle">6-Wekelijks programma van Scouts Ninove</div>
+<p>{% include metadata %}</p>
+<div class="back-cover-title">{{title}}</div>
+<div class="back-cover-subtitle">{{subtitle}}</div>
 <div class="back-cover-text">
   <p>Ben je op zoek naar een leuke jeugdbeweging in Ninove, dan hopen wij hier uw interesse te wekken voor de jongensscouts Ninove! Iedereen is welkom voor enkele vergaderingen te proberen, inschrijven kan vanaf heden ook online. </p>
 </div>
 <div class="back-cover-bottom">
-<!--   <div class="back-cover-qr"><img src='/images/hopper.jpg}}' alt='Lidnummer Hopper'/></div>
+<!--   <div class="back-cover-qr"><img src='{{ site.baseurl }}/images/hopper.jpg}}' alt='Lidnummer Hopper'/></div>
  --></div>
-<div class="back-cover-meta">Cover:  by </div>
+<div class="back-cover-meta">Cover: {{work.cover_image.title}} by {{work.cover_image.creator}}</div>
 
 </section>
 		
