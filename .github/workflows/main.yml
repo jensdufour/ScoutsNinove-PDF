@@ -23,8 +23,8 @@ jobs:
     # Get the needed files      
     - name: Get files
       run: |
-      wget -O ./_data/voorwoord.yml https://raw.githubusercontent.com/jensdufour/ScoutsNinove/master/_data/voorwoord.yml
-      wget -O ./_data/programma.yml https://raw.githubusercontent.com/jensdufour/ScoutsNinove/master/_data/programma.yml
+        wget -O ./_data/voorwoord.yml https://raw.githubusercontent.com/jensdufour/ScoutsNinove/master/_data/voorwoord.yml
+        wget -O ./_data/programma.yml https://raw.githubusercontent.com/jensdufour/ScoutsNinove/master/_data/programma.yml
 
     # Build the site
     - name: Build Site with Jekyll.
