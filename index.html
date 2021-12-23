@@ -1,0 +1,3224 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="generator" content="Jekyll https://jekyllrb.com/">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+    <title>Programma – 'T Boekske</title>
+    <link rel="stylesheet" href="assets/css/print.css">
+		<link rel="icon" type="image/png" href="assets/icons/favicon.png">
+
+		<script>
+      window.PagedConfig = {
+        after: (flow) => {
+					console.log(flow);
+					/*if (flow.rendered) {
+						//window.print();
+						let elementHtml = flow.pagesArea;
+						let htmlBody = document.documentElement.outerHTML;
+						let optionsData = {
+							// Either "pdf" or "screenshot"
+							output: "pdf",
+							// HTML content to render. Either url or html is required
+							html: htmlBody.toString(),
+							// If we should emulate @media screen instead of print
+							emulateScreenMedia: false,
+							// If we should ignore HTTPS errors
+							ignoreHttpsErrors: true,
+							// If true, page is scrolled to the end before rendering
+							// Note: this makes rendering a bit slower
+							scrollPage: false,
+							// Passed to Puppeteer page.waitFor()
+							//waitFor: "networkidle2",
+							// Passed to Puppeteer page.pdf()
+							//pdf: {}
+						};
+						let optionsDataURI = encodeURIComponent(JSON.stringify(optionsData));
+						var xmlhttp = new XMLHttpRequest();
+						xmlhttp.open("POST", "https://cors-anywhere.herokuapp.com/https://numenpdf.herokuapp.com/api/render");
+						xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+						//xmlhttp.setRequestHeader('x-api-key', 'foobar');
+						xmlhttp.responseType = "blob";
+						xmlhttp.send(JSON.stringify(optionsData));
+						xmlhttp.onreadystatechange = function() {
+							if (xmlhttp.readyState === 4) {
+								console.log(xmlhttp.response);
+								if (typeof window.navigator.msSaveBlob === 'function') {
+									window.navigator.msSaveBlob(xmlhttp.response, "PdfName-" + new Date().getTime() + ".pdf");
+								} else {
+									var blob = xmlhttp.response;
+									var link = document.createElement('a');
+									link.href = window.URL.createObjectURL(blob);
+									link.download = "PdfName-" + new Date().getTime() + ".pdf";
+
+									// append the link to the document body
+
+									document.body.appendChild(link);
+
+									link.click();
+								}
+							}
+						}
+						console.log(optionsData);
+					}*/
+				}
+      }
+    </script>
+		<script src="assets/js/paged.polyfil.js"></script>
+		<script>
+			function getUrlVars() {
+				var vars = {};
+				var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+					vars[key] = value;
+				});
+				return vars;
+			}
+			let width = getUrlVars()["width"];
+			let height = getUrlVars()["height"];
+			let orientation = getUrlVars()["orientation"];
+			let marginTop = getUrlVars()["marginTop"];
+			let marginBottom = getUrlVars()["marginBottom"];
+			let marginLeft = getUrlVars()["marginLeft"];
+			let marginRight = getUrlVars()["marginRight"];
+
+			if (width != undefined) {document.documentElement.style.setProperty('--width', width);}
+			if (height != undefined) {document.documentElement.style.setProperty('--height', height);}
+			if (orientation != undefined) {document.documentElement.style.setProperty('--orientation', orientation);}
+			if (marginTop != undefined) {document.documentElement.style.setProperty('--margin-top', marginTop);}
+			if (marginBottom != undefined) {document.documentElement.style.setProperty('--margin-bottom', marginBottom);}
+			if (marginLeft != undefined) {document.documentElement.style.setProperty('--margin-left', marginLeft);}
+			if (marginRight != undefined) {document.documentElement.style.setProperty('--margin-right', marginRight);}
+		</script>
+
+		<script src="assets/js/orderedList.js" type="text/javascript"></script>
+	  <script>
+	    // waiting for the before everything hook for that one
+	    window.onload = function () {
+	      noteNumbering();
+
+	      /* render pagedjs after a first render in the browser (need to calculate the computed line-height and font-metrics */
+	      //setTimeout(pagedjs, 3000);
+	      setTimeout(addingNumToOl, 20000);
+
+	    }
+	    // after the layout, add the start property to each ol element
+	    addingNumToOl();
+
+	  </script>
+	</head>
+<body>
+	
+	
+
+
+
+
+
+
+<section class="cover" id="cover" data-type="cover">
+		
+			
+			
+			
+
+<div class="cover-header">
+	<div class="cover-book-title">'T Boekske</div>
+	<div class="cover-book-subtitle">6-Wekelijks programma van Scouts Ninove</div>
+</div>
+<div class="cover-image-container"><img class="cover-image" src="assets/images/cover.jpg" alt="Cover" /></div>
+
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+			
+			
+			
+		
+</section>
+
+<!--front-matter-->
+<section class="front-matter">
+		
+			
+			
+			
+			
+		
+			
+			
+			
+		<section class="toc" id="toc" data-type="toc">
+
+<section class="toc">
+<h1>Inhoudstafel</h1>
+<nav>
+  <ul>
+    
+    
+    <li class="toc-1">
+      <a href="#woordjevandegroepsleiding">Woordje van de Groepsleiding</a>
+    </li>
+    
+    
+    
+    <li class="toc-1">
+      <a href="#kapoenen">Kapoenen</a>
+    </li>
+    
+    
+    
+    
+    
+    <li class="toc-1">
+      <a href="#welpen">Welpen</a>
+    </li>
+    
+    
+    
+    
+    
+    <li class="toc-1">
+      <a href="#jvk">Jongverkenners</a>
+    </li>
+    
+    
+    
+    
+    
+    <li class="toc-1">
+      <a href="#vk">Verkenners</a>
+    </li>
+    
+    
+    
+    
+    
+    <li class="toc-1">
+      <a href="#jin">Jinners</a>
+    </li>
+    
+    
+    
+    
+    
+    <li class="toc-1">
+      <a href="#vt">Voortrekkers</a>
+    </li>
+    
+    
+    
+    
+  </ul>
+</nav>
+</section>
+
+		</section>
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+</section>
+
+<!--body-matter-->
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+<section class="chapter" id="woordjevandegroepsleiding" data-type="chapter">
+	<h1 class="chapter chapter-title" id="woordjevandegroepsleiding">Woordje van de Groepsleiding</h1>
+
+<p class="text-justify"></p>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+<section class="chapter" id="kapoenen" data-type="chapter">
+	<h1 class="chapter chapter-title" id="kapoenen">Kapoenen</h1>
+
+<p class="text-justify">Beste kapoenen, ouders, en sympathisanten<br />Het nieuwe scoutsjaar gaat weer beginnen, joepieeeee!!! Om alles rustig te laten starten zullen de 1ste twee vergaderingen van dit jaar nog met de oude gekende leidingsploeg zijn. Er zullen met de overgang wel enkele veranderingen gebeuren. Zo neem ik zelf na 5 jaar trouwe dienst bij de kapoenen afscheid om de nieuwe leiding (jinners) alle kneepjes van het leidingsvak te gaan leren. Hiervoor zal ik natuurlijk hulp nodig hebben en daarom neem ik ook Ward Beeckmans mee naar de jin tak. Maar niet getreurd want natuurlijk nemen wij geen afscheid zonder een extra zotte afscheidsvergadering in mekaar te steken. Hoe jullie leidingsploeg er voor volgend jaar zal uitzien zullen jullie ontdekken op de overgang. Spannend!<br />Stevige linker<br /><br />Ward, Ward, Robbe, Niels, Alexander, Simon <br /></p>
+
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="section" id="kapoenen-PR" data-type="section">
+	<h1 class="section " id="kapoenen-PR">Programma</h1>
+
+<div class="card-body">
+    <div class="row justify-content-center">
+        
+        <div class="col-sm-12 col-lg-12">
+            <div class="card clean-card text-center">
+                
+                <div class="card-body info">
+                    <h4 class="card-title">Filmvergadering - 
+                        28/11/2021
+                        
+                        (
+                        14u00
+                        
+                        -
+                        
+                        17u00
+                        
+                        )
+                    </h4>
+                    <p class="card-text text-justify">Aangezien het als maar kouder wordt, gaan we gezellig in het lokaal een film kijken. De leiding zorgt voor wat versnaperingen. We spreken af om 14u aan het lokaal en sluiten daar ook om 17 u terug af.</p>
+                    <p class="card-text"></p>
+
+                </div>
+                <div>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        
+        <div class="col-sm-12 col-lg-12">
+            <div class="card clean-card text-center">
+                
+                <div class="card-body info">
+                    <h4 class="card-title">Sinterklaasvergadering - 
+                        05/12/2021
+                        
+                        (
+                        14u00
+                        
+                        -
+                        
+                        17u00
+                        
+                        )
+                    </h4>
+                    <p class="card-text text-justify">De sint heeft nog een plekje vrij gevonden in zijn drukke agenda om eens langs te komen bij de kapoenen. We zullen hem opwachten aan het lokaal. Hij kon ons ook al vertellen dat de kapoenen iets lekkers krijgen.</p>
+                    <p class="card-text"></p>
+
+                </div>
+                <div>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        
+        <div class="col-sm-12 col-lg-12">
+            <div class="card clean-card text-center">
+                
+                <div class="card-body info">
+                    <h4 class="card-title">zwemvergadering - 
+                        12/12/2021
+                        
+                        (
+                        14u00
+                        
+                        -
+                        
+                        17u00
+                        
+                        )
+                    </h4>
+                    <p class="card-text text-justify">Deze zondag gaan we ZWEMMEN in de kleine dender. Dus vergeet zeker jullie zwemgerief en handdoek niet!</p>
+                    <p class="card-text"></p>
+
+                </div>
+                <div>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        
+        <div class="col-sm-12 col-lg-12">
+            <div class="card clean-card text-center">
+                
+                <div class="card-body info">
+                    <h4 class="card-title">geen vergadering - 
+                        19/12/2021
+                        
+                        (
+                        14u
+                        
+                        -
+                        
+                        17u
+                        
+                        )
+                    </h4>
+                    <p class="card-text text-justify"></p>
+                    <p class="card-text"></p>
+
+                </div>
+                <div>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        
+        <div class="col-sm-12 col-lg-12">
+            <div class="card clean-card text-center">
+                
+                <div class="card-body info">
+                    <h4 class="card-title">geen vergadering - 
+                        26/12/2021
+                        
+                        (
+                        14u
+                        
+                        -
+                        
+                        17u
+                        
+                        )
+                    </h4>
+                    <p class="card-text text-justify"></p>
+                    <p class="card-text"></p>
+
+                </div>
+                <div>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        
+        <div class="col-sm-12 col-lg-12">
+            <div class="card clean-card text-center">
+                
+                <div class="card-body info">
+                    <h4 class="card-title">geen vergadering - 
+                        2/01/2022
+                        
+                        (
+                        14u
+                        
+                        -
+                        
+                        17u
+                        
+                        )
+                    </h4>
+                    <p class="card-text text-justify"></p>
+                    <p class="card-text"></p>
+
+                </div>
+                <div>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        
+    </div>
+</div>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="chapter" id="welpen" data-type="chapter">
+	<h1 class="chapter chapter-title" id="welpen">Welpen</h1>
+
+<p class="text-justify"><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;"> Beste welpen, ouders en sympathisanten </p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">&nbsp;</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">‘t Vorig Boekske zit erop en we hebben ons alweer geweldig geamuseerd tijdens onze vaste zondagse bezigheid. Onze truffelkoop was een groot succes en met die opbrengst gaan we heel leuke activiteiten kunnen voorzien voor jullie. Naast onze vergaderingen op zondag hebben op ons weekend in Gooik samen met de kapoenen veel welpen kunnen kennismaken met een scoutsweekend dat al heel lang niet meer is kunnen doorgaan door de corona-omstandigheden. De leiding wil jullie nog eens bedanken om toen met zoveel aanwezig te zijn want dat maakte hier echt een topweekend van! Ook dit boekske staat er weer van alles op het programma. Wij houden ons hart vast voor nieuwe maatregelen en hopen natuurlijk dat dit allemaal nog kan doorgaan onder de huidige stand van het coronavirus. We gaan te weten komen wie de slimste onder jullie is met onze enige echte quiz, de slimste welp ter wereld. Er zal ook een gezelschapsspelletjes vergadering zijn en omdat de feestdagen er ook aankomen doen we een welpen-nieuwjaarsreceptie. Ik zal jullie niet langer in spanning laten wachten want jullie zijn natuurlijk heel benieuwd wat we verder nog allemaal gaan doen dus scrol maar verder naar de vergaderingen. p&gt;<p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">&nbsp;</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">Hou het veilig</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;">&nbsp;</p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;"> Stevige Linker </p><p style="margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:&quot;Calibri&quot;,sans-serif;"> Nicolas, Ward, Othello, Lander, Emilio en Cas p&gt;</p>
+
+</p></p>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="section" id="welpen-PR" data-type="section">
+	<h1 class="section " id="welpen-PR">Programma</h1>
+
+<div class="card-body">
+        <div class="row justify-content-center">
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Slimste welp ter wereld vergadering - 
+                            28/11/2021
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Beste welpen deze zondag gaan we kunnen uitmaken wie de slimste onder jullie is. Je kan al wat opzoekwerk doen voor je naar de vergadering komt. De slimste welp zal dan ook doorgaan naar de volgende ronde. Deze vergadering zal doorgaan op de normale uren van 14 tot 17.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">zangstonde - 
+                            4/12/2021
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Om de scoutsliedjes  wat te onderhouden organiseren we een super mega leuke zangstonde. Wie heeft er de mooiste zangstem onder jullie? Warm jullie stembanden maar alvast op! Afspraak aan het lokaal van 18u30 tot 19u30.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Nerfvergadering - 
+                            12/12/2021
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Beste soldaten, om te bewijzen dat jullie allemaal stoere mannen zijn is het deze week nerfvergadering. Ready! Aim! Fire! Afspraak van 14 tot 17 aan het lokaal. Wie thuis een nerf geweer heeft liggen mag dit meenemen!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">jinvergadering - 
+                            19/12/2021
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Stoere welpen, deze week is het jinvergadering! Onze leuke jinners hebben deze week een super leuke vergadering in elkaar gestoken voor jullie! Jullie worden verwacht van 14 tot 17 aan het lokaal.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Gezelschapsspelletjes-vergadering - 
+                            16/12/2021
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Vandaag blijven we gezellig binnen en halen we onze leuke gezelschapsspelletjes boven die we van de sint en de kerstman gekregen hebben. Breng zeker een spelletje mee en de leiding zal ook wel wat voorzien. Afspraak op de normale uren van 14u tot 17u.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">nieuwjaarsreceptie - 
+                            01/01/2022
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">10...9...8...7...6...5...4...3...2...1...GELUKKIG NIEUWJAAR! 2021 is voorbij en misschien gaan we nu eindelijk een coronavrij jaar tegemoet! Wij zien 2022 alvast volledig zitten. We spreken af van 18u30 tot 19u30 aan het lokaal voor een nieuwjaarsreceptie met een hapje en een drankje en waar jullie ook allemaal jullie nieuwjaarsbrief aan de leiding mogen voorlezen.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="chapter" id="jvk" data-type="chapter">
+	<h1 class="chapter chapter-title" id="jvk">Jongverkenners</h1>
+
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="section" id="jvk-PR" data-type="section">
+	<h1 class="section " id="jvk-PR">Programma</h1>
+
+<div class="card-body">
+        <div class="row justify-content-center">
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Sinterklaasvergadering - 
+                            27/11/2021
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Hij komt, hij komt, de lieve goede Sint… Vandaag komt de goedheilig man jullie bezoeken! Ik hoop maar dat jullie allemaal braaf zijn geweest en dat niemand de roe krijgt! We komen het vandaag allemaal te weten. We spreken af om 18u aan het lokaal en sluiten, hopelijk met wat lekkers, af om 20u aan het lokaal.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Sterkste JVK - 
+                            28/11/2021
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Na gisteren niemand minder dan Sinterklaas op bezoek te hebben gehad, en heel veel snoepjes gekregen te hebben, moeten we vandaag toch wel eens kijken wie van jullie het beste, het meest superieur en het sterkste is. Wie van jullie is de echte alfajongverkenner?</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">dominovergadering - 
+                            04/12/2021
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Welke jongverkenner kent Domino Day nog? Zoniet, zeker eens opzoeken. Vandaag kruipen wij in de schoenen van deze, toch wel geduldige zotten, en maken wij het mooiste dominoparcours dat jullie ooit gezien hebben.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">de knotsgekke wafelmix verkoopvergadering - 
+                            05/12/2021
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Dit jaar verkopen wij een lekkere, smaakvolle mix van zoetigheden en hartigheden. Niets of niemand kan deze doos vol lekkernijen weerstaan. In wie schuilt de grootste verkoper? Wie haalt de beste trucjes boven en maakt de jvk-kas schatrijk? We komen het vandaag allemaal te weten.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Knexvergadering - 
+                            11/12/2021
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">In wie schuilt er een echte architect? Vandaag bouwen wij met Knex een brug die maar liefst 2 ton kan ondersteunen! Of beter gezegd, we zullen proberen…</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">De knotsgekke wafelmix verkoopvergadering, deel 2 - 
+                            12/12/2021
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Deel 2 van onze verkoop. Maar wij verkochten toch ontbijten normaal gezien? Niet getreurd, in het voorjaar verkopen wij dit opnieuw. Deze zomer gaan wij alleen op kamp en om er een onvergetelijke ervaring van te maken, steken we de handen uit de mouwen en verkopen wij zoveel we kunnen!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">filmvergadering - 
+                            18/12/2021
+                            
+                            (
+                            18u00
+                            
+                            -
+                            
+                            20u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Om jullie even rust en ontspanning te geven van al dat studeren, kijken we deze zaterdag een film! Welke het wordt, dat kan ik nog niet verklappen, maar het wordt zonder twijfel een topfilm. De vergadering gaat door van 18u tot 20u30 in het lokaal.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Geen vergadering - 
+                            19/12/2021
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Deze zondag moet ook de leiding beginnen studeren. Na een prachtige film gisteren, nemen we nu even rust om ons volop in te zetten op onze examens.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Geen vergadering - 
+                            25/12/2021
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Ho, ho, ho… Daar komt de kerstman. Vrolijk kerstfeest iedereen! Eet jullie buikjes maar rond op jullie familiefeest!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Geen vergadering - 
+                            26/12/2021
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Deze zondag moeten we allemaal nog bekomen van het gekke feestje gisteren. Daarom geen vergadering vandaag!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">Geen vergadering - 
+                            01/01/2022
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Een gelukkig nieuwjaar gewenst aan alle jongverkenners! Hopelijk wordt dit jaar weer wat beter dan de afgelopen coronajaren!</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title">nieuwjaarsreceptie - 
+                            02/01/2022
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify">Op deze eerste vergadering van het jaar gaan we met alle jongverkenners door met feesten. We willen van jullie horen hoe de laatste weken geweest zijn, want we gaan elkaar lang niet meer gezien hebben! Doe allemaal een feestelijke vest aan bovenop jullie uniform want het is nieuwjaarsreceptie.</p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="chapter" id="vk" data-type="chapter">
+	<h1 class="chapter chapter-title" id="vk">Verkenners</h1>
+
+<p class="text-justify">Beste verkenner, ouder(s) en of sympathisanten,<br /> <br /> Beginnen doen we met een terugblik op het kamp. We zaten aan het militair domein van kleine Brogel met de nodige wekker van formaat (lees F16s, lees JA VERKENNERS KOMT DER MOR OEETJ). We hopen dat het voor jullie net zoals voor ons een onvergetelijk kamp was. Dit was voor leider Yenthe alsook voor 10 derde jaars de allerlaatste dans. We nemen afscheid van Simon, Rune, Lowie, Seppe, Yoran, Leon, Amir, Lennert, Mei, en Mathias. Deze 10 kastaars gaan op jaarstage richting leiding, maar eerst moeten ze nog een klein klein proefje doorstaan waarvan ik zeker ben dat we ze genoeg voorbereid hebben. Leider Pascal gooit het roem volledig om en gaat richting kapoentjes. Dikke merci voor al het werk dat jij voor de verkenners hebt verricht. <br /> Tijdens de derde week verwelkomen we 6-7 toekomstige verkenners. Het zal jullie taak zijn om deze gepast te verwelkomen………..hoho….ik zou niet graag in die hun plaats zijn……..hohohoho.<br /> <br /> <br /> <br /> Stevige linker,<br /> Vurig Roodborstje, Bezonnen Roodborstje, Onvoorspelbaar grijs bokje, Zelfzekere herdershond<br /></p>
+
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="section" id="vk-PR" data-type="section">
+	<h1 class="section " id="vk-PR">Programma</h1>
+
+<div class="card-body">
+        <div class="row justify-content-center">
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u00
+                            
+                            -
+                            
+                            17u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            18u30
+                            
+                            -
+                            
+                            19u30
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            10u00
+                            
+                            -
+                            
+                            14u00
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="chapter" id="jin" data-type="chapter">
+	<h1 class="chapter chapter-title" id="jin">Jinners</h1>
+
+<p class="text-justify">Beste jinners in spé (en ouders),<br /> Jullie staan voor een groot moment in jullie scoutscarrière, jullie worden namelijk op 19 september jinner! Een jinjaar kan misschien het best omschreven worden als het krijgen van verantwoordelijkheden, maar toch nog eens serieus zot doen voor jullie leiding worden! Hoe crazy het jaar wordt zal zowel van jullie als van ons afhangen. Ons, jullie jinleiding zijn Riedl Saeys, Ward Proesmans en Ward Beeckmans. Voor de jinners en ouder die ons nog niet zo goed kennen, geen paniek. Binnenkort komen wij zeker eens langs voor een leuke babbel en wat meer info over wat het komende jinjaar zal inhouden. <br /> Bij deze ook jullie eerste jinprogramma!<br /></p>
+
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="section" id="jin-PR" data-type="section">
+	<h1 class="section " id="jin-PR">Programma</h1>
+
+<div class="card-body">
+        <div class="row justify-content-center">
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="chapter" id="vt" data-type="chapter">
+	<h1 class="chapter chapter-title" id="vt">Voortrekkers</h1>
+
+<p class="text-justify">Beste VT’s en startVT’s,<br /> Na anderhalfjaar Corona miserie mogen we eindelijk nog eens activiteiten organiseren en de bloemetjes buitenzetten. We hopen dat we jullie in grote getallen mogen verwelkomen op de komende VT-vergaderingen. Deze zullen altijd doorgaan op zaterdag om 20u30 tenzij anders vermeld. Het aankomende programma is zeker niet van de poes xxx<br /> St. L. De bazen &amp; de Heer<br /></p>
+
+
+</section>
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<section class="section" id="vt-PR" data-type="section">
+	<h1 class="section " id="vt-PR">Programma</h1>
+
+<div class="card-body">
+        <div class="row justify-content-center">
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+            <div class="col-sm-12 col-lg-12">
+                <div class="card clean-card text-center">
+                    
+                    <div class="card-body info">
+                        <h4 class="card-title"> - 
+                            
+                            
+                            (
+                            14u
+                            
+                            -
+                            
+                            17u
+                            
+                            )
+                        </h4>
+                        <p class="card-text text-justify"></p>
+                        <p class="card-text"></p>
+    
+                    </div>
+                    <div>
+                        <p>
+    
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+
+<!--back-matter-->
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+<section class="back-cover" id="back-cover" data-type="back-cover">
+
+<div class="back-cover-title">'T Boekske</div>
+<div class="back-cover-subtitle">6-Wekelijks programma van Scouts Ninove</div>
+<div class="back-cover-text">
+  <p>Ben je op zoek naar een leuke jeugdbeweging in Ninove, dan hopen wij hier uw interesse te wekken voor de jongensscouts Ninove! Iedereen is welkom voor enkele vergaderingen te proberen, inschrijven kan vanaf heden ook online. </p>
+</div>
+<div class="back-cover-bottom">
+<!--   <div class="back-cover-qr"><img src='/images/hopper.jpg}}' alt='Lidnummer Hopper'/></div>
+ --></div>
+<div class="back-cover-meta">Cover:  by </div>
+
+</section>
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+	
+
+</body>
+</html>
